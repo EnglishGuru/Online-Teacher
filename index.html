@@ -4,989 +4,861 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f9fc">
-  <meta name="description" content="Teacher Empowerment Program - برنامج تمكين المعلمين وتطوير مهارات التدريس الرقمي.">
+  <meta name="description" content="برنامج تدريب المعلمين — برنامج لتطوير مهارات التدريس الرقمي.">
   <meta name="google" content="notranslate">
   <meta http-equiv="Content-Language" content="ar">
-  <title>Teacher Empowerment Program | برنامج تمكين المعلمين</title>
+  <title>Teacher Empowerment Program</title>
 
   <style>
-    :root {
-      --ink: #172b4d;
-      --muted: #65748b;
-      --blue: #356fe0;
-      --blue-dark: #2456bd;
-      --teal: #35a99b;
-      --line: #e5eaf2;
-      --surface: #ffffff;
-      --bg: #f7f9fc;
-      --soft: #edf3ff;
-      --radius: 22px;
-      --shadow: 0 18px 55px rgba(25,49,89,.08);
+    :root{
+      --ink:#172b4d;
+      --muted:#65748b;
+      --blue:#356fe0;
+      --blue-dark:#2456bd;
+      --teal:#35a99b;
+      --line:#e5eaf2;
+      --surface:#ffffff;
+      --bg:#f7f9fc;
+      --soft:#edf3ff;
+      --radius:22px;
+      --shadow:0 18px 55px rgba(25,49,89,.08);
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter,"Segoe UI",Tahoma,Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      width:min(1120px,calc(100% - 40px));
+      margin:auto;
+    }
+
+    .topbar{
+      padding:20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      font-weight:800;
+      font-size:19px;
+      letter-spacing:-.4px;
+    }
+
+    .brand-mark{
+      width:39px;
+      height:39px;
+      border-radius:13px;
+      background:linear-gradient(145deg,#4d83ed,#2a5ec9);
+      display:grid;
+      place-items:center;
+      color:white;
+      font-size:19px;
+      box-shadow:0 8px 18px #356fe033;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .lang-btn,.menu-link{
+      border:1px solid var(--line);
+      background:white;
+      border-radius:999px;
+      padding:9px 15px;
+      font:inherit;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .menu-link{
+      border-color:transparent;
+      background:transparent;
+      color:var(--muted);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, "Segoe UI", Tahoma, Arial, sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .topbar {
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-weight: 800;
-      font-size: 19px;
-      letter-spacing: -.4px;
-    }
-
-    .brand-mark {
-      width: 39px;
-      height: 39px;
-      border-radius: 13px;
-      background: linear-gradient(145deg,#4d83ed,#2a5ec9);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 19px;
-      box-shadow: 0 8px 18px #356fe033;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .lang-btn,
-    .menu-link {
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 999px;
-      padding: 9px 15px;
-      font: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .menu-link {
-      border-color: transparent;
-      background: transparent;
-      color: var(--muted);
-    }
-
-    .hero {
-      padding: 55px 0 72px;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border: 1px solid #dce7ff;
-      background: #f0f5ff;
-      color: #315fbd;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--teal);
-    }
 
-    h1 {
-      font-size: clamp(37px,5vw,58px);
-      line-height: 1.15;
-      letter-spacing: -1.8px;
-      margin: 20px 0 18px;
+    .hero{
+      padding:55px 0 72px;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border:1px solid #dce7ff;
+      background:#f0f5ff;
+      color:#315fbd;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
     }
 
-    .hero p {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 570px;
-      margin: 0 0 27px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      border-radius: 13px;
-      padding: 13px 21px;
-      font-weight: 800;
-      font-size: 14px;
-      transition: .2s ease;
+    .eyebrow-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--teal);
     }
 
-    .btn-primary {
-      background: var(--blue);
-      color: white;
-      box-shadow: 0 10px 22px #356fe033;
+    h1{
+      font-size:clamp(37px,5vw,58px);
+      line-height:1.15;
+      letter-spacing:-1.8px;
+      margin:20px 0 18px;
     }
 
-    .btn-primary:hover {
-      background: var(--blue-dark);
-      transform: translateY(-2px);
+    .hero p{
+      font-size:17px;
+      color:var(--muted);
+      max-width:570px;
+      margin:0 0 27px;
     }
 
-    .btn-secondary {
-      background: white;
-      border: 1px solid var(--line);
-      color: var(--ink);
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:12px;
     }
 
-    .free-note {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 18px;
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:9px;
+      border-radius:13px;
+      padding:13px 21px;
+      font-weight:800;
+      font-size:14px;
+      transition:.2s ease;
     }
-
-    .free-note b {
-      color: #248d7f;
-    }
-
-    .visual {
-      min-height: 390px;
-      position: relative;
-      display: grid;
-      place-items: center;
-    }
-
-    .visual-card {
-      position: relative;
-      width: min(100%,450px);
-      min-height: 335px;
-      border: 1px solid #e3eaf6;
-      border-radius: 30px;
-      background: linear-gradient(145deg,#fff,#f0f5ff);
-      box-shadow: var(--shadow);
-      padding: 26px;
-      overflow: hidden;
-    }
 
-    .visual-card:before,
-    .visual-card:after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: #dce8ff;
-      opacity: .7;
+    .btn-primary{
+      background:var(--blue);
+      color:white;
+      box-shadow:0 10px 22px #356fe033;
     }
 
-    .visual-card:before {
-      width: 210px;
-      height: 210px;
-      top: -100px;
-      left: -60px;
+    .btn-primary:hover{
+      background:var(--blue-dark);
+      transform:translateY(-2px);
     }
 
-    .visual-card:after {
-      width: 170px;
-      height: 170px;
-      bottom: -100px;
-      right: -50px;
-      background: #d9f2ed;
+    .btn-secondary{
+      background:white;
+      border:1px solid var(--line);
+      color:var(--ink);
     }
 
-    .screen {
-      position: relative;
-      z-index: 1;
-      background: white;
-      border: 1px solid #e7ecf4;
-      border-radius: 19px;
-      padding: 17px;
-      box-shadow: 0 12px 30px #1b37600d;
+    .free-note{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:18px;
     }
 
-    .screen-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
+    .free-note b{color:#248d7f}
 
-    .screen-title {
-      font-size: 12px;
-      font-weight: 800;
+    .visual{
+      min-height:390px;
+      position:relative;
+      display:grid;
+      place-items:center;
     }
 
-    .screen-pill {
-      font-size: 10px;
-      color: #248d7f;
-      background: #eaf8f5;
-      border-radius: 30px;
-      padding: 5px 9px;
-      font-weight: 800;
+    .visual-card{
+      position:relative;
+      width:min(100%,450px);
+      min-height:335px;
+      border:1px solid #e3eaf6;
+      border-radius:30px;
+      background:linear-gradient(145deg,#fff,#f0f5ff);
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
     }
 
-    .screen-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 11px;
+    .visual-card:before,.visual-card:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:#dce8ff;
+      opacity:.7;
     }
 
-    .mini-card {
-      background: #f7f9fd;
-      border: 1px solid #edf0f6;
-      border-radius: 13px;
-      padding: 14px;
-      min-height: 105px;
+    .visual-card:before{
+      width:210px;
+      height:210px;
+      top:-100px;
+      left:-60px;
     }
 
-    .mini-icon {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: #eaf0ff;
-      color: #356fe0;
-      font-size: 16px;
-      margin-bottom: 8px;
+    .visual-card:after{
+      width:170px;
+      height:170px;
+      bottom:-100px;
+      right:-50px;
+      background:#d9f2ed;
     }
 
-    .mini-card:nth-child(2) .mini-icon {
-      background: #e9f7f4;
-      color: #269786;
+    .screen{
+      position:relative;
+      z-index:1;
+      background:white;
+      border:1px solid #e7ecf4;
+      border-radius:19px;
+      padding:17px;
+      box-shadow:0 12px 30px #1b37600d;
     }
 
-    .mini-card:nth-child(3) .mini-icon {
-      background: #f2edff;
-      color: #8060ce;
+    .screen-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
     }
 
-    .mini-card:nth-child(4) .mini-icon {
-      background: #fff3e8;
-      color: #cf8641;
+    .screen-title{
+      font-size:12px;
+      font-weight:800;
     }
 
-    .mini-card strong {
-      display: block;
-      font-size: 11px;
+    .screen-pill{
+      font-size:10px;
+      color:#248d7f;
+      background:#eaf8f5;
+      border-radius:30px;
+      padding:5px 9px;
+      font-weight:800;
     }
 
-    .mini-card small {
-      font-size: 9px;
-      color: var(--muted);
+    .screen-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px;
     }
 
-    .float-tag {
-      position: absolute;
-      z-index: 2;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 11px 14px;
-      box-shadow: 0 10px 25px #1b376014;
-      font-size: 11px;
-      font-weight: 800;
+    .mini-card{
+      background:#f7f9fd;
+      border:1px solid #edf0f6;
+      border-radius:13px;
+      padding:14px;
+      min-height:105px;
     }
 
-    .tag-one {
-      bottom: 27px;
-      left: -9px;
+    .mini-icon{
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:#eaf0ff;
+      color:#356fe0;
+      font-size:16px;
+      margin-bottom:8px;
     }
 
-    .tag-two {
-      top: 28px;
-      right: -10px;
+    .mini-card:nth-child(2) .mini-icon{
+      background:#e9f7f4;
+      color:#269786;
     }
 
-    section {
-      padding: 67px 0;
+    .mini-card:nth-child(3) .mini-icon{
+      background:#f2edff;
+      color:#8060ce;
     }
 
-    .section-head {
-      text-align: center;
-      max-width: 690px;
-      margin: 0 auto 34px;
+    .mini-card:nth-child(4) .mini-icon{
+      background:#fff3e8;
+      color:#cf8641;
     }
 
-    .kicker {
-      font-size: 12px;
-      color: var(--blue);
-      font-weight: 900;
-      letter-spacing: .7px;
-      text-transform: uppercase;
+    .mini-card strong{
+      display:block;
+      font-size:11px;
     }
 
-    h2 {
-      font-size: clamp(27px,3.5vw,38px);
-      line-height: 1.25;
-      letter-spacing: -.8px;
-      margin: 9px 0 11px;
+    .mini-card small{
+      font-size:9px;
+      color:var(--muted);
     }
 
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
+    .float-tag{
+      position:absolute;
+      z-index:2;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:11px 14px;
+      box-shadow:0 10px 25px #1b376014;
+      font-size:11px;
+      font-weight:800;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 16px;
-    }
+    .tag-one{bottom:27px;left:-9px}
+    .tag-two{top:28px;right:-10px}
 
-    .feature {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 23px;
-      min-height: 185px;
-    }
+    section{padding:67px 0}
 
-    .feature-icon {
-      width: 43px;
-      height: 43px;
-      border-radius: 14px;
-      background: var(--soft);
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      margin-bottom: 15px;
+    .section-head{
+      text-align:center;
+      max-width:690px;
+      margin:0 auto 34px;
     }
 
-    .feature:nth-child(2) .feature-icon {
-      background: #e9f7f4;
+    .kicker{
+      font-size:12px;
+      color:var(--blue);
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
     }
 
-    .feature:nth-child(3) .feature-icon {
-      background: #f3efff;
+    h2{
+      font-size:clamp(27px,3.5vw,38px);
+      line-height:1.25;
+      letter-spacing:-.8px;
+      margin:9px 0 11px;
     }
 
-    .feature:nth-child(4) .feature-icon {
-      background: #fff3e8;
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
     }
 
-    .feature:nth-child(5) .feature-icon {
-      background: #edf6ff;
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
     }
 
-    .feature:nth-child(6) .feature-icon {
-      background: #fceff4;
+    .feature{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:23px;
+      min-height:185px;
     }
 
-    .feature h3 {
-      font-size: 16px;
-      margin: 0 0 7px;
+    .feature-icon{
+      width:43px;
+      height:43px;
+      border-radius:14px;
+      background:var(--soft);
+      display:grid;
+      place-items:center;
+      font-size:20px;
+      margin-bottom:15px;
     }
 
-    .feature p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
+    .feature:nth-child(2) .feature-icon{background:#e9f7f4}
+    .feature:nth-child(3) .feature-icon{background:#f3efff}
+    .feature:nth-child(4) .feature-icon{background:#fff3e8}
+    .feature:nth-child(5) .feature-icon{background:#edf6ff}
+    .feature:nth-child(6) .feature-icon{background:#fceff4}
 
-    .band {
-      background: #122b4c;
-      color: white;
-      border-radius: 28px;
-      padding: 38px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
+    .feature h3{
+      font-size:16px;
+      margin:0 0 7px;
     }
 
-    .band h2 {
-      margin: 0 0 8px;
-      font-size: 29px;
+    .feature p{
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
     }
 
-    .band p {
-      margin: 0;
-      color: #c4d1e2;
-      font-size: 14px;
-      max-width: 650px;
+    .band{
+      background:#122b4c;
+      color:white;
+      border-radius:28px;
+      padding:38px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
     }
 
-    .band .btn {
-      background: white;
-      color: #18365e;
-      white-space: nowrap;
+    .band h2{
+      margin:0 0 8px;
+      font-size:29px;
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 16px;
+    .band p{
+      margin:0;
+      color:#c4d1e2;
+      font-size:14px;
+      max-width:650px;
     }
 
-    .step {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
+    .band .btn{
+      background:white;
+      color:#18365e;
+      white-space:nowrap;
     }
 
-    .step-num {
-      width: 33px;
-      height: 33px;
-      border-radius: 11px;
-      background: #edf3ff;
-      color: var(--blue);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 13px;
-      margin-bottom: 14px;
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
     }
 
-    .step h3 {
-      font-size: 15px;
-      margin: 0 0 6px;
+    .step{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
     }
 
-    .step p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
+    .step-num{
+      width:33px;
+      height:33px;
+      border-radius:11px;
+      background:#edf3ff;
+      color:var(--blue);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:13px;
+      margin-bottom:14px;
     }
 
-    .faq {
-      max-width: 800px;
-      margin: auto;
-      display: grid;
-      gap: 10px;
+    .step h3{
+      font-size:15px;
+      margin:0 0 6px;
     }
 
-    details {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 15px 18px;
+    .step p{
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
     }
 
-    summary {
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
+    .faq{
+      max-width:800px;
+      margin:auto;
+      display:grid;
+      gap:10px;
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    details{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:15px 18px;
     }
 
-    summary:after {
-      content: "+";
-      color: var(--blue);
-      font-size: 19px;
-      line-height: 1;
+    summary{
+      font-weight:800;
+      font-size:14px;
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
     }
 
-    details[open] summary:after {
-      content: "−";
+    summary::-webkit-details-marker{display:none}
+    summary:after{
+      content:"+";
+      color:var(--blue);
+      font-size:19px;
+      line-height:1;
     }
 
-    details p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    details[open] summary:after{content:"−"}
 
-    .final-cta {
-      text-align: center;
-      background: #edf3ff;
-      border: 1px solid #e0eaff;
-      border-radius: 27px;
-      padding: 44px 22px;
+    details p{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:13px;
     }
 
-    .final-cta p {
-      color: var(--muted);
-      max-width: 590px;
-      margin: 0 auto 22px;
-      font-size: 14px;
+    .final-cta{
+      text-align:center;
+      background:#edf3ff;
+      border:1px solid #e0eaff;
+      border-radius:27px;
+      padding:44px 22px;
     }
 
-    footer {
-      padding: 27px 0 35px;
-      color: var(--muted);
-      font-size: 12px;
+    .final-cta p{
+      color:var(--muted);
+      max-width:590px;
+      margin:0 auto 22px;
+      font-size:14px;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      align-items: center;
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
+    footer{
+      padding:27px 0 35px;
+      color:var(--muted);
+      font-size:12px;
     }
 
-    [data-lang="en"] {
-      display: none;
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      align-items:center;
+      border-top:1px solid var(--line);
+      padding-top:22px;
     }
 
-    body.english {
-      direction: ltr;
-    }
+    [data-lang="en"]{display:none}
 
-    body.english [data-lang="ar"] {
-      display: none;
-    }
+    body.english{direction:ltr}
 
-    body.english [data-lang="en"] {
-      display: initial;
-    }
+    body.english [data-lang="ar"]{display:none}
+    body.english [data-lang="en"]{display:initial}
 
     body.english .hero,
-    body.english .band {
-      direction: ltr;
-    }
+    body.english .band{direction:ltr}
 
-    body.english .brand {
-      letter-spacing: 0;
-    }
+    body.english .brand{letter-spacing:0}
 
     body.english .visual-card,
     body.english .feature,
-    body.english .step {
-      text-align: left;
+    body.english .step{text-align:left}
+
+    body.english .free-note{direction:ltr}
+
+    @media(max-width:800px){
+      .hero{
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:35px 0 55px;
+      }
+
+      .visual{min-height:340px}
+      .feature-grid{grid-template-columns:repeat(2,1fr)}
+      .band{grid-template-columns:1fr;padding:29px}
+      .band .btn{justify-self:start}
     }
 
-    body.english .free-note {
-      direction: ltr;
+    @media(max-width:540px){
+      .container{width:min(100% - 28px,1120px)}
+      .topbar{padding:14px 0}
+      .menu-link{display:none}
+      h1{font-size:39px}
+      .hero p{font-size:15px}
+      .visual{min-height:310px}
+      .visual-card{min-height:285px;padding:17px}
+      .float-tag{font-size:9px}
+      section{padding:48px 0}
+      .feature-grid,.steps{grid-template-columns:1fr}
+      .feature{min-height:auto}
+      .footer-inner{flex-direction:column;text-align:center}
+      .actions .btn{width:100%}
     }
 
-    /* Application form */
+    /* Application Form */
 
-    .apply-section {
-      background: linear-gradient(180deg,#eef4ff,#f7f9fc);
+    .apply-section{
+      background:linear-gradient(180deg,#f2f6ff 0%,#f7f9fc 100%);
     }
 
-    .apply-wrap {
-      max-width: 860px;
-      margin: auto;
+    .apply-wrap{
+      max-width:850px;
+      margin:auto;
     }
 
-    .apply-card {
-      background: #fff;
-      border: 1px solid #e1e8f4;
-      border-radius: 26px;
-      box-shadow: 0 22px 65px rgba(25,49,89,.10);
-      overflow: hidden;
+    .apply-card{
+      background:#fff;
+      border:1px solid #e1e8f4;
+      border-radius:26px;
+      box-shadow:0 22px 65px rgba(25,49,89,.10);
+      overflow:hidden;
     }
 
-    .apply-head {
-      padding: 30px 34px;
-      background: linear-gradient(120deg,#142f55,#2456a2);
-      color: #fff;
+    .apply-head{
+      padding:30px 34px;
+      background:linear-gradient(120deg,#142f55,#2456a2);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
     }
 
-    .apply-kicker {
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      font-weight: 900;
-      color: #c6d8ff;
+    .apply-head:after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border:35px solid rgba(255,255,255,.07);
+      border-radius:50%;
+      left:-55px;
+      top:-105px;
     }
 
-    .apply-head h2 {
-      font-size: 30px;
-      margin: 8px 0;
-      color: #fff;
+    .apply-kicker{
+      font-size:11px;
+      letter-spacing:1.5px;
+      font-weight:900;
+      color:#b9d0ff;
     }
 
-    .apply-head p {
-      margin: 0;
-      color: #e0eaff;
-      font-size: 14px;
+    .apply-head h2{
+      font-size:30px;
+      margin:8px 0;
+      color:#fff;
     }
 
-    .apply-body {
-      padding: 30px 34px;
+    .apply-head p{
+      margin:0;
+      color:#d9e5f7;
+      font-size:14px;
+      max-width:600px;
     }
 
-    .form-progress {
-      height: 6px;
-      background: #edf1f7;
-      border-radius: 20px;
-      margin-bottom: 24px;
-      overflow: hidden;
+    .apply-body{padding:30px 34px}
+
+    .form-progress{
+      height:6px;
+      background:#edf1f7;
+      border-radius:20px;
+      margin-bottom:24px;
+      overflow:hidden;
     }
 
-    .form-progress span {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,#35a99b,#4c7fe0);
+    .form-progress span{
+      display:block;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg,#35a99b,#4c7fe0);
+      border-radius:20px;
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:19px;
     }
 
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      min-width: 0;
+    .form-field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
     }
 
-    .form-field.full {
-      grid-column: 1/-1;
-    }
+    .form-field.full{grid-column:1/-1}
 
     .form-field label,
-    .field-label {
-      font-size: 13px;
-      font-weight: 800;
-      color: #203858;
+    .field-label{
+      font-size:13px;
+      font-weight:800;
+      color:#203858;
     }
 
-    .required-star {
-      color: #d64f62;
-    }
+    .required{color:#d65a68}
 
-    .form-field input:not([type="checkbox"]):not([type="radio"]),
-    .form-field textarea {
-      width: 100%;
-      border: 1px solid #dce4f0;
-      border-radius: 12px;
-      padding: 13px 14px;
-      font: inherit;
-      font-size: 14px;
-      color: #203858;
-      background: #fbfcfe;
-      outline: none;
-      transition: .2s;
+    .form-field input,
+    .form-field textarea,
+    .form-field select{
+      width:100%;
+      border:1px solid #dce4f0;
+      border-radius:12px;
+      padding:13px 14px;
+      font:inherit;
+      font-size:14px;
+      color:#203858;
+      background:#fbfcfe;
+      outline:none;
+      transition:.2s;
     }
 
     .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: #5681dc;
-      box-shadow: 0 0 0 3px #5681dc18;
-      background: #fff;
+    .form-field textarea:focus,
+    .form-field select:focus{
+      border-color:#5681dc;
+      box-shadow:0 0 0 3px #5681dc18;
+      background:#fff;
     }
 
-    .form-field textarea {
-      min-height: 108px;
-      resize: vertical;
+    .form-field textarea{
+      min-height:108px;
+      resize:vertical;
     }
 
-    .form-field.invalid input:not([type="checkbox"]):not([type="radio"]),
-    .form-field.invalid textarea {
-      border-color: #d64f62;
-      background: #fffafb;
+    .choice-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .field-error {
-      display: none;
-      color: #c53e52;
-      font-size: 12px;
-      font-weight: 700;
+    .choice{position:relative}
+
+    .choice input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
     }
 
-    .form-field.invalid .field-error {
-      display: block;
+    .choice span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border:1px solid #dce4f0;
+      border-radius:12px;
+      background:#fbfcfe;
+      color:#52647c;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s;
     }
 
-    .choice-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 7px;
+    .choice span:before{
+      content:"";
+      width:15px;
+      height:15px;
+      border:1.5px solid #aab8cb;
+      border-radius:5px;
+      background:#fff;
+      flex-shrink:0;
     }
 
-    .choice {
-      position: relative;
+    .choice.radio span:before{border-radius:50%}
+
+    .choice input:checked+span{
+      border-color:#4b79d3;
+      background:#eef4ff;
+      color:#2456a2;
     }
 
-    .choice input {
-      position: absolute;
-      opacity: 0;
-      width: 1px;
-      height: 1px;
+    .choice input:checked+span:before{
+      background:#356fe0;
+      border-color:#356fe0;
+      box-shadow:inset 0 0 0 3px #fff;
     }
 
-    .choice span {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 10px 15px;
-      border: 1px solid #dce4f0;
-      border-radius: 12px;
-      background: #fbfcfe;
-      color: #52647c;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
+    .choice-error{
+      color:#d04452;
+      font-size:12px;
+      display:none;
+      margin-top:5px;
     }
 
-    .choice span:before {
-      content: "";
-      width: 15px;
-      height: 15px;
-      border: 1.5px solid #aab8cb;
-      border-radius: 5px;
-      background: #fff;
-      flex: 0 0 auto;
+    .field-invalid input,
+    .field-invalid textarea{
+      border-color:#d65a68 !important;
     }
 
-    .choice.radio span:before {
-      border-radius: 50%;
+    .field-invalid .choice span{
+      border-color:#d65a68;
     }
 
-    .choice input:checked + span {
-      border-color: #4b79d3;
-      background: #eef4ff;
-      color: #2456a2;
+    .submit-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-top:24px;
+      padding-top:22px;
+      border-top:1px solid #edf0f5;
     }
 
-    .choice input:checked + span:before {
-      background: #356fe0;
-      border-color: #356fe0;
-      box-shadow: inset 0 0 0 3px #fff;
+    .submit-btn{
+      border:0;
+      cursor:pointer;
+      background:linear-gradient(120deg,#356fe0,#2456bd);
+      color:#fff;
+      border-radius:13px;
+      padding:14px 25px;
+      font:inherit;
+      font-weight:900;
+      box-shadow:0 10px 22px #356fe033;
+      transition:.2s;
     }
 
-    .choice-group.invalid .choice span {
-      border-color: #d64f62;
+    .submit-btn:hover{transform:translateY(-1px)}
+
+    .submit-btn:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none;
     }
 
-    .form-note {
-      font-size: 12px;
-      color: #718097;
-      margin: 20px 0 0;
+    .submit-hint{
+      font-size:11px;
+      color:#718097;
+      max-width:330px;
     }
 
-    .submit-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: 24px;
-      padding-top: 22px;
-      border-top: 1px solid #edf0f5;
+    .form-status{
+      display:none;
+      margin-top:18px;
+      padding:15px 17px;
+      border-radius:12px;
+      font-size:14px;
+      line-height:1.8;
     }
 
-    .submit-btn {
-      border: 0;
-      cursor: pointer;
-      background: linear-gradient(120deg,#356fe0,#2456bd);
-      color: #fff;
-      border-radius: 13px;
-      padding: 14px 25px;
-      font: inherit;
-      font-weight: 900;
-      box-shadow: 0 10px 22px #356fe033;
+    .form-status.pending{
+      display:block;
+      background:#eef4ff;
+      color:#2456a2;
+      border:1px solid #dce7ff;
     }
 
-    .submit-btn:disabled {
-      opacity: .65;
-      cursor: wait;
+    .form-status.success{
+      display:block;
+      background:#eef8f5;
+      color:#217b6e;
+      border:1px solid #d4eee6;
     }
 
-    .submit-hint {
-      font-size: 11px;
-      color: #718097;
-      max-width: 330px;
+    .form-status.error{
+      display:block;
+      background:#fff1f1;
+      color:#b42332;
+      border:1px solid #f4d3d6;
     }
 
-    .form-status {
-      display: none;
-      margin-top: 17px;
-      padding: 13px 15px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
+    .hidden-frame{
+      position:absolute;
+      width:1px;
+      height:1px;
+      border:0;
+      left:-9999px;
+      top:-9999px;
     }
 
-    .form-status.error {
-      display: block;
-      background: #fff0f1;
-      color: #b52e43;
-    }
-
-    .form-status.pending {
-      display: block;
-      background: #eef4ff;
-      color: #2456a2;
-    }
-
-    .form-status.success {
-      display: block;
-      background: #eaf8f3;
-      color: #217b65;
-    }
-
-    .hidden-submit-frame {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      left: -10000px;
-      top: -10000px;
-      border: 0;
-    }
-
-    @media(max-width:800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 35px 0 55px;
+    @media(max-width:600px){
+      .apply-head,.apply-body{padding:23px 19px}
+      .apply-head h2{font-size:25px}
+      .form-grid{grid-template-columns:1fr}
+      .form-field.full{grid-column:auto}
+      .submit-row{
+        align-items:stretch;
+        flex-direction:column;
       }
-
-      .visual {
-        min-height: 340px;
-      }
-
-      .feature-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .band {
-        grid-template-columns: 1fr;
-        padding: 29px;
-      }
-
-      .band .btn {
-        justify-self: start;
-      }
-    }
-
-    @media(max-width:600px) {
-      .container {
-        width: min(100% - 28px,1120px);
-      }
-
-      .topbar {
-        padding: 14px 0;
-      }
-
-      .menu-link {
-        display: none;
-      }
-
-      h1 {
-        font-size: 39px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .visual {
-        min-height: 310px;
-      }
-
-      .visual-card {
-        min-height: 285px;
-        padding: 17px;
-      }
-
-      .float-tag {
-        font-size: 9px;
-      }
-
-      section {
-        padding: 48px 0;
-      }
-
-      .feature-grid,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .feature {
-        min-height: auto;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .actions .btn {
-        width: 100%;
-      }
-
-      .apply-head,
-      .apply-body {
-        padding: 23px 19px;
-      }
-
-      .apply-head h2 {
-        font-size: 25px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-field.full {
-        grid-column: auto;
-      }
-
-      .submit-row {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .submit-btn {
-        width: 100%;
-      }
+      .submit-btn{width:100%}
     }
   </style>
 </head>
@@ -1018,15 +890,13 @@
 
   <main>
 
-    <!-- HERO -->
-
     <div class="container hero">
 
       <div>
         <span class="eyebrow">
           <span class="eyebrow-dot"></span>
-          <span data-lang="ar">برنامج تمكين المعلمين</span>
-          <span data-lang="en">TEACHER EMPOWERMENT PROGRAM</span>
+          <span data-lang="ar">برنامج تدريبي للمعلمين</span>
+          <span data-lang="en">TEACHER DEVELOPMENT PROGRAM</span>
         </span>
 
         <h1>
@@ -1035,13 +905,8 @@
         </h1>
 
         <p>
-          <span data-lang="ar">
-            انطلق في رحلتك نحو التدريس الأونلاين باحترافية، وتعرّف على كيفية توظيف الذكاء الاصطناعي والأدوات التفاعلية لصناعة تجربة تعليمية أكثر تأثيرًا.
-          </span>
-
-          <span data-lang="en">
-            Build your confidence as an online teacher and discover how AI and interactive tools can help you create more engaging learning experiences.
-          </span>
+          <span data-lang="ar">انطلق في رحلتك نحو التدريس الأونلاين باحترافية، وتعرّف على كيفية توظيف الذكاء الاصطناعي والأدوات التفاعلية لصناعة تجربة تعليمية أكثر تأثيرًا.</span>
+          <span data-lang="en">Build your confidence as an online teacher and discover how AI and interactive tools can help you create more engaging learning experiences.</span>
         </p>
 
         <div class="actions">
@@ -1068,21 +933,19 @@
         </div>
       </div>
 
-      <div class="visual">
+      <div class="visual" aria-label="Digital teaching skills">
         <div class="visual-card">
-
           <div class="screen">
+
             <div class="screen-top">
               <span class="screen-title">
                 <span data-lang="ar">مهارات المعلم الرقمي</span>
                 <span data-lang="en">Digital Teaching Skills</span>
               </span>
-
-              <span class="screen-pill">TEACHER EMPOWERMENT</span>
+              <span class="screen-pill">TEACHER TRAINING PROGRAM</span>
             </div>
 
             <div class="screen-grid">
-
               <div class="mini-card">
                 <div class="mini-icon">✦</div>
                 <strong>AI Tools</strong>
@@ -1118,7 +981,6 @@
                   <span data-lang="en">Teach with confidence</span>
                 </small>
               </div>
-
             </div>
           </div>
 
@@ -1132,13 +994,10 @@
             <span data-lang="ar">للمعلمين</span>
             <span data-lang="en">FOR TEACHERS</span>
           </div>
-
         </div>
       </div>
 
     </div>
-
-    <!-- PROGRAM FEATURES -->
 
     <section id="program">
       <div class="container">
@@ -1155,13 +1014,8 @@
           </h2>
 
           <p>
-            <span data-lang="ar">
-              تعرّف على مجموعة من المهارات والأدوات التي تساعدك على تطوير التخطيط للدروس، والتفاعل مع الطلاب، وتقديم المحتوى بطرق مبتكرة.
-            </span>
-
-            <span data-lang="en">
-              Explore useful skills and tools to help you plan lessons, engage students, and deliver content in creative ways.
-            </span>
+            <span data-lang="ar">تعرّف على مجموعة من المهارات والأدوات التي تساعدك على تطوير التخطيط للدروس، والتفاعل مع الطلاب، وتقديم المحتوى بطرق مبتكرة.</span>
+            <span data-lang="en">Explore useful skills and tools to help you plan lessons, engage students, and deliver content in creative ways.</span>
           </p>
         </div>
 
@@ -1243,12 +1097,10 @@
       </div>
     </section>
 
-    <!-- CTA BAND -->
-
     <section>
       <div class="container">
-
         <div class="band">
+
           <div>
             <h2>
               <span data-lang="ar">التعليم يتطور… وحان وقت تطورك معه.</span>
@@ -1263,15 +1115,13 @@
 
           <a class="btn" href="#apply">
             <span data-lang="ar">قدّم الآن</span>
-            <span data-lang="en">Apply for Free</span>
+            <span data-lang="en">Apply Now</span>
             ↗
           </a>
-        </div>
 
+        </div>
       </div>
     </section>
-
-    <!-- STEPS -->
 
     <section>
       <div class="container">
@@ -1330,8 +1180,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-
     <section id="faq">
       <div class="container">
 
@@ -1366,8 +1214,8 @@
               <span data-lang="en">Do I need previous online teaching experience?</span>
             </summary>
             <p>
-              <span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا.</span>
-              <span data-lang="en">You can apply whether or not you have taught online before.</span>
+              <span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا. اذكر مستوى خبرتك في نموذج التقديم.</span>
+              <span data-lang="en">You can apply whether or not you have taught online before. Please describe your experience in the application form.</span>
             </p>
           </details>
 
@@ -1377,8 +1225,8 @@
               <span data-lang="en">How can I apply?</span>
             </summary>
             <p>
-              <span data-lang="ar">اضغط على زر التقديم واملأ الاستمارة الموجودة داخل الصفحة.</span>
-              <span data-lang="en">Click an application button and complete the form on this page.</span>
+              <span data-lang="ar">اضغط على أي زر من أزرار التقديم في الصفحة، ثم املأ الاستمارة الموجودة داخل الموقع.</span>
+              <span data-lang="en">Click any application button and complete the application form directly on this page.</span>
             </p>
           </details>
 
@@ -1397,12 +1245,10 @@
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-
     <section>
       <div class="container">
-
         <div class="final-cta">
+
           <div class="kicker">
             <span data-lang="ar">خطوتك القادمة تبدأ هنا</span>
             <span data-lang="en">YOUR NEXT STEP STARTS HERE</span>
@@ -1423,33 +1269,52 @@
             <span data-lang="en">Submit Your Application</span>
             ↗
           </a>
-        </div>
 
+        </div>
       </div>
     </section>
 
     <!-- APPLICATION FORM -->
 
     <section id="apply" class="apply-section">
+
       <div class="container">
 
         <div class="section-head">
-          <div class="kicker">TEACHER EMPOWERMENT PROGRAM</div>
 
-          <h2>قدّم طلبك للانضمام إلى البرنامج</h2>
+          <div class="kicker">
+            <span data-lang="ar">نموذج الالتحاق</span>
+            <span data-lang="en">APPLICATION FORM</span>
+          </div>
+
+          <h2>
+            <span data-lang="ar">ابدأ طلبك للانضمام إلى البرنامج</span>
+            <span data-lang="en">Apply to the Teacher Empowerment Program</span>
+          </h2>
 
           <p>
-            املأ البيانات التالية بعناية. ستظهر لك رسالة بجوار أي خانة تحتاج إلى استكمال أو تصحيح.
+            <span data-lang="ar">شاركنا نبذة عنك وعن خبرتك واهتماماتك التعليمية. يُرجى إدخال بيانات صحيحة حتى نتمكن من التواصل معك.</span>
+            <span data-lang="en">Tell us about yourself, your experience, and your teaching interests. Please provide accurate details so we can contact you.</span>
           </p>
+
         </div>
 
         <div class="apply-wrap">
+
           <div class="apply-card">
 
             <div class="apply-head">
               <div class="apply-kicker">TEACHER EMPOWERMENT PROGRAM</div>
-              <h2>استمارة التقديم</h2>
-              <p>بياناتك تساعدنا على معرفة خبراتك واحتياجاتك التعليمية.</p>
+
+              <h2>
+                <span data-lang="ar">استمارة التقديم</span>
+                <span data-lang="en">Your Application</span>
+              </h2>
+
+              <p>
+                <span data-lang="ar">خطوة واحدة تفصلك عن بداية رحلة جديدة في تطوير مهاراتك التعليمية.</span>
+                <span data-lang="en">One step closer to a new chapter in your professional development.</span>
+              </p>
             </div>
 
             <div class="apply-body">
@@ -1458,63 +1323,67 @@
                 <span></span>
               </div>
 
+              <!-- Hidden iframe: Google Forms response stays in the background -->
+              <iframe
+                class="hidden-frame"
+                name="googleResponseFrame"
+                id="googleResponseFrame"
+                title="Submission frame">
+              </iframe>
+
               <form
                 id="teacherApplication"
                 action="https://docs.google.com/forms/d/e/1FAIpQLSeJ5CxSHmu4OyvpuyU-GLPTnpPwaVlRHS2f7qIIMTVRHUmcHQ/formResponse"
                 method="POST"
                 target="googleResponseFrame"
-                accept-charset="UTF-8"
-                novalidate
-              >
+                novalidate>
 
                 <div class="form-grid">
 
-                  <!-- FULL NAME -->
-
-                  <div class="form-field" data-field="name">
+                  <div class="form-field" id="field-name">
                     <label for="app-name">
-                      الاسم بالكامل <i class="required-star">*</i>
+                      <span data-lang="ar">الاسم بالكامل</span>
+                      <span data-lang="en">Full name</span>
+                      <i class="required">*</i>
                     </label>
 
                     <input
                       id="app-name"
                       name="entry.78801371"
-                      type="text"
                       autocomplete="name"
                       required
-                    >
+                      placeholder="اكتب اسمك بالكامل">
 
-                    <span class="field-error">
-                      من فضلك اكتب الاسم بالكامل.
-                    </span>
+                    <div class="choice-error" id="error-name">
+                      يُرجى إدخال الاسم بالكامل.
+                    </div>
                   </div>
 
-                  <!-- PHONE -->
-
-                  <div class="form-field" data-field="phone">
+                  <div class="form-field" id="field-phone">
                     <label for="app-phone">
-                      رقم الهاتف / واتساب <i class="required-star">*</i>
+                      <span data-lang="ar">رقم الهاتف / واتساب</span>
+                      <span data-lang="en">Phone / WhatsApp</span>
+                      <i class="required">*</i>
                     </label>
 
                     <input
                       id="app-phone"
                       name="entry.510591651"
                       type="tel"
-                      inputmode="tel"
                       autocomplete="tel"
                       required
-                    >
+                      placeholder="+20 ...">
 
-                    <span class="field-error">
-                      اكتب رقم هاتف صحيحًا من 7 إلى 15 رقمًا.
-                    </span>
+                    <div class="choice-error" id="error-phone">
+                      يُرجى إدخال رقم هاتف صحيح.
+                    </div>
                   </div>
 
-                  <!-- AGE -->
-
-                  <div class="form-field" data-field="age">
+                  <div class="form-field" id="field-age">
                     <label for="app-age">
-                      السن <i class="required-star">*</i>
+                      <span data-lang="ar">السن</span>
+                      <span data-lang="en">Age</span>
+                      <i class="required">*</i>
                     </label>
 
                     <input
@@ -1523,114 +1392,129 @@
                       type="number"
                       min="1"
                       max="99"
-                      step="1"
                       required
-                    >
+                      placeholder="...">
 
-                    <span class="field-error">
-                      اكتب سنًا صحيحًا من 1 إلى 99.
-                    </span>
+                    <div class="choice-error" id="error-age">
+                      يُرجى إدخال سن صحيح.
+                    </div>
                   </div>
 
-                  <!-- SUBJECT -->
-
-                  <div class="form-field" data-field="subject">
+                  <div class="form-field" id="field-subject">
                     <label for="app-subject">
-                      المادة أو التخصص الذي تدرّسه <i class="required-star">*</i>
+                      <span data-lang="ar">المادة أو التخصص الذي تدرّسه</span>
+                      <span data-lang="en">Subject / Teaching specialism</span>
+                      <i class="required">*</i>
                     </label>
 
                     <input
                       id="app-subject"
                       name="entry.746118929"
-                      type="text"
                       required
-                    >
+                      placeholder="مثال: English, Maths, Science">
 
-                    <span class="field-error">
-                      من فضلك اكتب المادة أو التخصص.
-                    </span>
+                    <div class="choice-error" id="error-subject">
+                      يُرجى كتابة المادة أو التخصص.
+                    </div>
                   </div>
 
-                  <!-- AGE GROUPS -->
-
-                  <div class="form-field full choice-group" data-field="groups">
+                  <div class="form-field full" id="field-groups">
 
                     <div class="field-label">
-                      ما الفئات العمرية التي تدرّس لها؟
-                      <i class="required-star">*</i>
+                      <span data-lang="ar">ما الفئات العمرية التي تدرّس لها؟</span>
+                      <span data-lang="en">Which age groups do you teach?</span>
+                      <i class="required">*</i>
                     </div>
 
-                    <div class="choice-row">
+                    <div class="choice-row" style="margin-top:8px">
 
                       <label class="choice">
                         <input
                           type="checkbox"
                           name="entry.364235320"
-                          value="children"
-                        >
-                        <span>الأطفال</span>
+                          value="children">
+                        <span>
+                          <span data-lang="ar">الأطفال</span>
+                          <span data-lang="en">Children</span>
+                        </span>
                       </label>
 
                       <label class="choice">
                         <input
                           type="checkbox"
                           name="entry.364235320"
-                          value="adults"
-                        >
-                        <span>الكبار</span>
+                          value="teenagers">
+                        <span>
+                          <span data-lang="ar">المراهقون</span>
+                          <span data-lang="en">Teenagers</span>
+                        </span>
+                      </label>
+
+                      <label class="choice">
+                        <input
+                          type="checkbox"
+                          name="entry.364235320"
+                          value="adults">
+                        <span>
+                          <span data-lang="ar">الكبار</span>
+                          <span data-lang="en">Adults</span>
+                        </span>
                       </label>
 
                     </div>
 
-                    <span class="field-error">
-                      اختَر فئة عمرية واحدة على الأقل.
-                    </span>
+                    <div class="choice-error" id="error-groups">
+                      يُرجى اختيار فئة عمرية واحدة على الأقل.
+                    </div>
 
                   </div>
 
-                  <!-- ONLINE EXPERIENCE -->
-
-                  <div class="form-field full choice-group" data-field="online">
+                  <div class="form-field full" id="field-online">
 
                     <div class="field-label">
-                      هل سبق لك التدريس أونلاين؟
-                      <i class="required-star">*</i>
+                      <span data-lang="ar">هل سبق لك التدريس أونلاين؟</span>
+                      <span data-lang="en">Have you taught online before?</span>
+                      <i class="required">*</i>
                     </div>
 
-                    <div class="choice-row">
+                    <div class="choice-row" style="margin-top:8px">
 
                       <label class="choice radio">
                         <input
                           type="radio"
                           name="entry.852306748"
-                          value="yes"
-                        >
-                        <span>نعم</span>
+                          value="yes">
+                        <span>
+                          <span data-lang="ar">نعم</span>
+                          <span data-lang="en">Yes</span>
+                        </span>
                       </label>
 
                       <label class="choice radio">
                         <input
                           type="radio"
                           name="entry.852306748"
-                          value="no"
-                        >
-                        <span>لا</span>
+                          value="no">
+                        <span>
+                          <span data-lang="ar">لا</span>
+                          <span data-lang="en">No</span>
+                        </span>
                       </label>
 
                     </div>
 
-                    <span class="field-error">
-                      من فضلك اختر نعم أو لا.
-                    </span>
+                    <div class="choice-error" id="error-online">
+                      يُرجى اختيار إجابة.
+                    </div>
 
                   </div>
 
-                  <!-- YEARS OF EXPERIENCE -->
+                  <div class="form-field" id="field-years">
 
-                  <div class="form-field" data-field="years">
                     <label for="app-years">
-                      عدد سنوات الخبرة في التدريس
-                      <i class="required-star">*</i>
+                      <span data-lang="ar">عدد سنوات الخبرة في التدريس</span>
+                      <span data-lang="en">Years of teaching experience</span>
+                      <i class="required">*</i>
                     </label>
 
                     <input
@@ -1639,71 +1523,68 @@
                       type="number"
                       min="0"
                       max="60"
-                      step="1"
                       required
-                    >
+                      placeholder="0">
 
-                    <span class="field-error">
-                      اكتب عدد سنوات صحيحًا من 0 إلى 60.
-                    </span>
+                    <div class="choice-error" id="error-years">
+                      يُرجى إدخال عدد سنوات الخبرة.
+                    </div>
+
                   </div>
 
-                  <!-- CHALLENGES -->
+                  <div class="form-field full" id="field-challenges">
 
-                  <div class="form-field full" data-field="challenges">
                     <label for="app-challenges">
-                      ما أبرز التحديات التي تواجهك في التدريس؟
-                      <i class="required-star">*</i>
+                      <span data-lang="ar">ما أبرز التحديات التي تواجهك في التدريس؟</span>
+                      <span data-lang="en">What are the main challenges you face in teaching?</span>
+                      <i class="required">*</i>
                     </label>
 
                     <textarea
                       id="app-challenges"
                       name="entry.1169120534"
                       required
-                    ></textarea>
+                      placeholder="اكتب إجابتك هنا..."></textarea>
 
-                    <span class="field-error">
-                      من فضلك اكتب إجابتك عن التحديات.
-                    </span>
+                    <div class="choice-error" id="error-challenges">
+                      يُرجى كتابة إجابتك.
+                    </div>
+
                   </div>
 
-                  <!-- GOALS -->
+                  <div class="form-field full" id="field-goals">
 
-                  <div class="form-field full" data-field="goals">
                     <label for="app-goals">
-                      ما الذي تتطلع إلى اكتسابه من البرنامج؟
-                      <i class="required-star">*</i>
+                      <span data-lang="ar">ما الذي تتطلع إلى اكتسابه من البرنامج؟</span>
+                      <span data-lang="en">What would you like to gain from this program?</span>
+                      <i class="required">*</i>
                     </label>
 
                     <textarea
                       id="app-goals"
                       name="entry.1770386143"
                       required
-                    ></textarea>
+                      placeholder="شاركنا أهدافك وتوقعاتك..."></textarea>
 
-                    <span class="field-error">
-                      من فضلك اكتب ما تتطلع إلى اكتسابه.
-                    </span>
+                    <div class="choice-error" id="error-goals">
+                      يُرجى كتابة أهدافك وتوقعاتك.
+                    </div>
+
                   </div>
 
                 </div>
 
-                <p class="form-note">
-                  لن يتم فتح Google Forms أمام المتقدم. يتم إرسال البيانات إلى النموذج في الخلفية.
-                </p>
-
                 <div class="submit-row">
 
-                  <button
-                    class="submit-btn"
-                    id="submitApplication"
-                    type="submit"
-                  >
-                    إرسال طلب التقديم ←
+                  <button class="submit-btn" id="submitButton" type="submit">
+                    <span data-lang="ar">إرسال طلب التقديم</span>
+                    <span data-lang="en">Submit Application</span>
+                    <span aria-hidden="true">↗</span>
                   </button>
 
                   <span class="submit-hint">
-                    تأكد من مراجعة بياناتك قبل الإرسال.
+                    <span data-lang="ar">يرجى التأكد من صحة بياناتك قبل إرسال الطلب.</span>
+                    <span data-lang="en">Please check your information before submitting.</span>
                   </span>
 
                 </div>
@@ -1712,32 +1593,18 @@
                   class="form-status"
                   id="formStatus"
                   role="status"
-                  aria-live="polite"
-                ></div>
+                  aria-live="polite">
+                </div>
 
               </form>
-
-              <!-- Hidden Google Forms response frame -->
-
-              <iframe
-                class="hidden-submit-frame"
-                name="googleResponseFrame"
-                id="googleResponseFrame"
-                title="إرسال الطلب في الخلفية"
-                tabindex="-1"
-                aria-hidden="true"
-              ></iframe>
 
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
   </main>
-
-  <!-- FOOTER -->
 
   <footer>
     <div class="container footer-inner">
@@ -1749,7 +1616,7 @@
 
       <span>
         <span data-lang="ar">برنامج لتطوير مهارات التدريس الرقمي.</span>
-        <span data-lang="en">A program for developing digital teaching skills.</span>
+        <span data-lang="en">A teacher training program for digital teaching development.</span>
       </span>
 
       <span>
@@ -1760,330 +1627,325 @@
   </footer>
 
   <script>
-    /* LANGUAGE SWITCH */
+    /* Language Toggle */
 
-    const toggle = document.getElementById("languageToggle");
+    const toggle = document.getElementById('languageToggle');
     const body = document.body;
 
-    toggle.addEventListener("click", function () {
-      const english = body.classList.toggle("english");
+    toggle.addEventListener('click', () => {
+      const english = body.classList.toggle('english');
 
-      document.documentElement.lang = english ? "en" : "ar";
-      document.documentElement.dir = english ? "ltr" : "rtl";
+      document.documentElement.lang = english ? 'en' : 'ar';
+      document.documentElement.dir = english ? 'ltr' : 'rtl';
 
-      toggle.textContent = english ? "العربية" : "English";
+      toggle.textContent = english ? 'العربية' : 'English';
     });
 
-    document.getElementById("year").textContent =
+    document.getElementById('year').textContent =
       new Date().getFullYear();
 
 
-    /* APPLICATION FORM */
+    /* Application Form */
 
-    const appForm = document.getElementById("teacherApplication");
-    const appFrame = document.getElementById("googleResponseFrame");
-    const appStatus = document.getElementById("formStatus");
-    const appSubmit = document.getElementById("submitApplication");
+    const applicationForm =
+      document.getElementById('teacherApplication');
 
-    let appWaitingForGoogle = false;
+    const responseFrame =
+      document.getElementById('googleResponseFrame');
+
+    const submitButton =
+      document.getElementById('submitButton');
+
+    const formStatus =
+      document.getElementById('formStatus');
+
     let submissionStarted = false;
-    let responseTimer = null;
+    let submissionFinished = false;
+    let submissionTimer = null;
 
 
-    /* SHOW OR HIDE FIELD ERROR */
+    /* Show field error */
 
-    function setFieldError(key, invalid) {
-      const field = appForm.querySelector(
-        '[data-field="' + key + '"]'
-      );
+    function showFieldError(fieldName, show) {
+      const field = document.getElementById('field-' + fieldName);
+      const error = document.getElementById('error-' + fieldName);
 
-      if (field) {
-        field.classList.toggle("invalid", invalid);
-      }
+      if (!field || !error) return;
+
+      field.classList.toggle('field-invalid', show);
+      error.style.display = show ? 'block' : 'none';
     }
 
 
-    /* VALIDATE ALL FIELDS */
+    /* Clear all errors */
+
+    function clearAllErrors() {
+      [
+        'name',
+        'phone',
+        'age',
+        'subject',
+        'groups',
+        'online',
+        'years',
+        'challenges',
+        'goals'
+      ].forEach(name => showFieldError(name, false));
+    }
+
+
+    /* Validate form */
 
     function validateApplication() {
+      clearAllErrors();
 
       let valid = true;
-      let firstInvalid = null;
 
-      const checks = [
+      const name = document.getElementById('app-name').value.trim();
+      const phone = document.getElementById('app-phone').value.trim();
+      const age = document.getElementById('app-age').value.trim();
+      const subject = document.getElementById('app-subject').value.trim();
+      const years = document.getElementById('app-years').value.trim();
+      const challenges = document.getElementById('app-challenges').value.trim();
+      const goals = document.getElementById('app-goals').value.trim();
 
-        [
-          "name",
-          function () {
-            return document
-              .getElementById("app-name")
-              .value.trim().length >= 2;
-          }
-        ],
+      const phoneDigits = phone.replace(/\D/g, '');
 
-        [
-          "phone",
-          function () {
-            const phone = document
-              .getElementById("app-phone")
-              .value.trim();
-
-            const digits = phone.replace(/[^\d]/g, "");
-
-            return digits.length >= 7 && digits.length <= 15;
-          }
-        ],
-
-        [
-          "age",
-          function () {
-            const raw = document.getElementById("app-age").value;
-            const age = Number(raw);
-
-            return (
-              raw !== "" &&
-              Number.isInteger(age) &&
-              age >= 1 &&
-              age <= 99
-            );
-          }
-        ],
-
-        [
-          "subject",
-          function () {
-            return document
-              .getElementById("app-subject")
-              .value.trim().length > 0;
-          }
-        ],
-
-        [
-          "groups",
-          function () {
-            return appForm.querySelectorAll(
-              'input[name="entry.364235320"]:checked'
-            ).length > 0;
-          }
-        ],
-
-        [
-          "online",
-          function () {
-            return !!appForm.querySelector(
-              'input[name="entry.852306748"]:checked'
-            );
-          }
-        ],
-
-        [
-          "years",
-          function () {
-            const raw = document.getElementById("app-years").value;
-            const years = Number(raw);
-
-            return (
-              raw !== "" &&
-              Number.isInteger(years) &&
-              years >= 0 &&
-              years <= 60
-            );
-          }
-        ],
-
-        [
-          "challenges",
-          function () {
-            return document
-              .getElementById("app-challenges")
-              .value.trim().length > 0;
-          }
-        ],
-
-        [
-          "goals",
-          function () {
-            return document
-              .getElementById("app-goals")
-              .value.trim().length > 0;
-          }
-        ]
-
-      ];
-
-
-      checks.forEach(function (item) {
-
-        const key = item[0];
-        const test = item[1];
-        const isValid = test();
-
-        setFieldError(key, !isValid);
-
-        if (!isValid) {
-
-          valid = false;
-
-          if (!firstInvalid) {
-            firstInvalid = appForm.querySelector(
-              '[data-field="' + key + '"]'
-            );
-          }
-
-        }
-
-      });
-
-
-      if (!valid && firstInvalid) {
-
-        firstInvalid.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-
-        const focusable = firstInvalid.querySelector(
-          'input:not([type="checkbox"]):not([type="radio"]), textarea, input[type="checkbox"], input[type="radio"]'
+      const selectedGroups =
+        applicationForm.querySelectorAll(
+          'input[name="entry.364235320"]:checked'
         );
 
-        if (focusable) {
-          focusable.focus({ preventScroll: true });
-        }
+      const onlineAnswer =
+        applicationForm.querySelector(
+          'input[name="entry.852306748"]:checked'
+        );
 
+      if (!name) {
+        showFieldError('name', true);
+        valid = false;
+      }
+
+      if (!phone || phoneDigits.length < 7 || phoneDigits.length > 15) {
+        showFieldError('phone', true);
+        valid = false;
+      }
+
+      if (
+        !age ||
+        !Number.isInteger(Number(age)) ||
+        Number(age) < 1 ||
+        Number(age) > 99
+      ) {
+        showFieldError('age', true);
+        valid = false;
+      }
+
+      if (!subject) {
+        showFieldError('subject', true);
+        valid = false;
+      }
+
+      if (selectedGroups.length === 0) {
+        showFieldError('groups', true);
+        valid = false;
+      }
+
+      if (!onlineAnswer) {
+        showFieldError('online', true);
+        valid = false;
+      }
+
+      if (
+        years === '' ||
+        !Number.isInteger(Number(years)) ||
+        Number(years) < 0 ||
+        Number(years) > 60
+      ) {
+        showFieldError('years', true);
+        valid = false;
+      }
+
+      if (!challenges) {
+        showFieldError('challenges', true);
+        valid = false;
+      }
+
+      if (!goals) {
+        showFieldError('goals', true);
+        valid = false;
       }
 
       return valid;
-
     }
 
 
-    /* CLEAR FIELD ERROR WHILE USER IS EDITING */
+    /* Show status message */
 
-    appForm.querySelectorAll("input, textarea").forEach(function (element) {
+    function showStatus(type, message) {
+      formStatus.className = 'form-status ' + type;
+      formStatus.textContent = message;
+      formStatus.style.display = 'block';
+    }
 
-      element.addEventListener("input", function () {
 
-        const wrapper = element.closest("[data-field]");
+    /* Scroll to first error */
 
-        if (wrapper) {
-          wrapper.classList.remove("invalid");
+    function scrollToFirstError() {
+      const firstError =
+        document.querySelector('.field-invalid');
+
+      if (firstError) {
+        firstError.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    }
+
+
+    /* Remove error while typing */
+
+    [
+      'app-name',
+      'app-phone',
+      'app-age',
+      'app-subject',
+      'app-years',
+      'app-challenges',
+      'app-goals'
+    ].forEach(id => {
+      const input = document.getElementById(id);
+
+      input.addEventListener('input', () => {
+        const fieldName = id.replace('app-', '');
+
+        if (input.value.trim()) {
+          showFieldError(fieldName, false);
         }
-
       });
-
-      element.addEventListener("change", function () {
-
-        const wrapper = element.closest("[data-field]");
-
-        if (wrapper) {
-          wrapper.classList.remove("invalid");
-        }
-
-      });
-
     });
 
 
-    /* GOOGLE RESPONSE FRAME */
+    /* Remove group error when a group is selected */
 
-    appFrame.addEventListener("load", function () {
+    applicationForm
+      .querySelectorAll('input[name="entry.364235320"]')
+      .forEach(input => {
+        input.addEventListener('change', () => {
+          const selected =
+            applicationForm.querySelectorAll(
+              'input[name="entry.364235320"]:checked'
+            );
 
-      if (!appWaitingForGoogle) {
-        return;
-      }
-
-      appWaitingForGoogle = false;
-
-      if (responseTimer) {
-        clearTimeout(responseTimer);
-      }
-
-      appSubmit.disabled = false;
-      appSubmit.textContent = "إعادة إرسال الطلب";
-
-      appStatus.className = "form-status success";
-
-      appStatus.textContent =
-        "انتهت محاولة الإرسال ووصل رد من Google داخل الصفحة. لا يمكن للصفحة قراءة محتوى رد Google أو التأكد من تسجيل الإجابة داخل Responses؛ لذلك يُرجى مراجعة الردود للتأكد من وصول الطلب.";
-
-      /*
-        لا نمسح بيانات المستخدم تلقائيًا؛
-        لأن تحميل الإطار لا يثبت وحده أن الرد تم تسجيله.
-      */
-
-    });
+          if (selected.length > 0) {
+            showFieldError('groups', false);
+          }
+        });
+      });
 
 
-    /* FORM SUBMISSION */
+    /* Remove online experience error when selected */
 
-    appForm.addEventListener("submit", function (event) {
+    applicationForm
+      .querySelectorAll('input[name="entry.852306748"]')
+      .forEach(input => {
+        input.addEventListener('change', () => {
+          showFieldError('online', false);
+        });
+      });
+
+
+    /* Handle form submission */
+
+    applicationForm.addEventListener('submit', function(event) {
 
       event.preventDefault();
 
-      if (submissionStarted) {
+      if (submissionStarted || submissionFinished) {
         return;
       }
-
-      appStatus.className = "form-status";
-      appStatus.textContent = "";
-
-
-      /* Validate before sending */
 
       if (!validateApplication()) {
+        scrollToFirstError();
 
-        appStatus.className = "form-status error";
-
-        appStatus.textContent =
-          "راجع الخانات المحددة باللون الأحمر وأكمل البيانات المطلوبة.";
+        showStatus(
+          'error',
+          'يرجى مراجعة الحقول المطلوبة وإكمال البيانات قبل إرسال الطلب.'
+        );
 
         return;
-
       }
 
-
-      /* Start submission */
-
       submissionStarted = true;
-      appWaitingForGoogle = true;
 
-      appSubmit.disabled = true;
-      appSubmit.textContent = "جارٍ إرسال الطلب...";
+      submitButton.disabled = true;
+      submitButton.textContent = 'جارٍ إرسال الطلب...';
 
-      appStatus.className = "form-status pending";
-
-      appStatus.textContent =
-        "جارٍ إرسال طلبك في الخلفية. لن تغادر هذه الصفحة.";
-
+      showStatus(
+        'pending',
+        'جارٍ إرسال طلبك، برجاء الانتظار قليلًا...'
+      );
 
       /*
-        Submit the original form directly to Google Forms.
-        The target is the hidden iframe, not a new browser tab.
+        The form is submitted normally to Google Forms.
+        Its response is loaded inside the hidden iframe.
+        The applicant stays on this page.
       */
 
-      HTMLFormElement.prototype.submit.call(appForm);
+      submissionTimer = setTimeout(() => {
 
+        if (!submissionFinished) {
 
-      /* Timeout if no iframe response is received */
+          submissionStarted = false;
 
-      responseTimer = window.setTimeout(function () {
+          submitButton.disabled = false;
+          submitButton.textContent = 'إعادة المحاولة';
 
-        if (!appWaitingForGoogle) {
-          return;
+          showStatus(
+            'error',
+            'لم نتمكن من تأكيد وصول الطلب في الوقت الحالي. يُرجى المحاولة مرة أخرى.'
+          );
         }
 
-        appWaitingForGoogle = false;
-        submissionStarted = false;
+      }, 20000);
 
-        appSubmit.disabled = false;
-        appSubmit.textContent = "إعادة المحاولة";
+      applicationForm.submit();
 
-        appStatus.className = "form-status error";
+    });
 
-        appStatus.textContent =
-          "لم يصل رد من Google خلال المهلة المحددة. لم يتم التأكد من تسجيل الطلب. بياناتك ما زالت موجودة؛ يمكنك المحاولة مرة أخرى.";
 
-      }, 15000);
+    /* Detect Google Forms response */
+
+    responseFrame.addEventListener('load', function() {
+
+      if (!submissionStarted || submissionFinished) {
+        return;
+      }
+
+      submissionFinished = true;
+
+      if (submissionTimer) {
+        clearTimeout(submissionTimer);
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'تم إرسال الطلب بنجاح';
+
+      showStatus(
+        'success',
+        'شكرًا لك! تم استلام طلب التقديم بنجاح. يسعدنا اهتمامك بالانضمام إلى Teacher Empowerment Program. سنتواصل معك قريبًا.'
+      );
+
+      /*
+        Do not reset the form automatically.
+        This helps prevent accidental duplicate submissions.
+      */
+
+      formStatus.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
 
     });
 
