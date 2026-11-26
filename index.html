@@ -118,6 +118,43 @@
       .footer-inner{flex-direction:column;text-align:center}
       .actions .btn{width:100%}
     }
+
+    /* Teacher Empowerment application form */
+    .apply-section{background:linear-gradient(180deg,#f2f6ff 0%,#f7f9fc 100%)}
+    .apply-wrap{max-width:850px;margin:auto}
+    .apply-card{background:#fff;border:1px solid #e1e8f4;border-radius:26px;box-shadow:0 22px 65px rgba(25,49,89,.10);overflow:hidden}
+    .apply-head{padding:30px 34px;background:linear-gradient(120deg,#142f55,#2456a2);color:#fff;position:relative;overflow:hidden}
+    .apply-head:after{content:"";position:absolute;width:220px;height:220px;border:35px solid rgba(255,255,255,.07);border-radius:50%;left:-55px;top:-105px}
+    .apply-kicker{font-size:11px;letter-spacing:1.5px;font-weight:900;color:#b9d0ff}
+    .apply-head h2{font-size:30px;margin:8px 0;color:#fff}
+    .apply-head p{margin:0;color:#d9e5f7;font-size:14px;max-width:600px}
+    .apply-body{padding:30px 34px}
+    .form-progress{height:6px;background:#edf1f7;border-radius:20px;margin-bottom:24px;overflow:hidden}
+    .form-progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#35a99b,#4c7fe0);border-radius:20px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}
+    .form-field{display:flex;flex-direction:column;gap:7px}
+    .form-field.full{grid-column:1/-1}
+    .form-field label,.field-label{font-size:13px;font-weight:800;color:#203858}
+    .required{color:#d65a68}
+    .form-field input,.form-field textarea,.form-field select{width:100%;border:1px solid #dce4f0;border-radius:12px;padding:13px 14px;font:inherit;font-size:14px;color:#203858;background:#fbfcfe;outline:none;transition:.2s}
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:#5681dc;box-shadow:0 0 0 3px #5681dc18;background:#fff}
+    .form-field textarea{min-height:108px;resize:vertical}
+    .choice-row{display:flex;flex-wrap:wrap;gap:10px}
+    .choice{position:relative}
+    .choice input{position:absolute;opacity:0;pointer-events:none}
+    .choice span{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid #dce4f0;border-radius:12px;background:#fbfcfe;color:#52647c;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+    .choice span:before{content:"";width:15px;height:15px;border:1.5px solid #aab8cb;border-radius:5px;background:#fff}
+    .choice.radio span:before{border-radius:50%}
+    .choice input:checked+span{border-color:#4b79d3;background:#eef4ff;color:#2456a2}
+    .choice input:checked+span:before{background:#356fe0;border-color:#356fe0;box-shadow:inset 0 0 0 3px #fff}
+    .form-note{font-size:12px;color:#718097;margin:20px 0 0}
+    .submit-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:22px;border-top:1px solid #edf0f5}
+    .submit-btn{border:0;cursor:pointer;background:linear-gradient(120deg,#356fe0,#2456bd);color:#fff;border-radius:13px;padding:14px 25px;font:inherit;font-weight:900;box-shadow:0 10px 22px #356fe033}
+    .submit-btn:hover{transform:translateY(-1px)}
+    .submit-hint{font-size:11px;color:#718097;max-width:330px}
+    .form-status{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:#eef8f5;color:#217b6e;font-size:13px}
+    @media(max-width:600px){.apply-head,.apply-body{padding:23px 19px}.apply-head h2{font-size:25px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.submit-row{align-items:stretch;flex-direction:column}.submit-btn{width:100%}}
+
   </style>
 </head>
 <body>
@@ -135,7 +172,7 @@
   <main>
     <div class="container hero">
       <div>
-        <span class="eyebrow"><span class="eyebrow-dot"></span><span data-lang="ar">برنامج تدريبي للمعلمين</span><span data-lang="en">TEACHER EMPOWERMENT PROGRAM</span></span>
+        <span class="eyebrow"><span class="eyebrow-dot"></span><span data-lang="ar">برنامج تدريبي للمعلمين</span><span data-lang="en">TEACHER DEVELOPMENT PROGRAM</span></span>
         <h1>
           <span data-lang="ar">طوّر مهاراتك، واصنع مستقبلًا أفضل للتعليم.</span>
           <span data-lang="en">Teach smarter. Create a better future for learning.</span>
@@ -145,7 +182,7 @@
           <span data-lang="en">Build your confidence as an online teacher and discover how AI and interactive tools can help you create more engaging learning experiences.</span>
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://forms.gle/mUb6VLZ2PFBnsTLp9" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="#apply">
             <span data-lang="ar">قدّم طلبك الآن</span><span data-lang="en">Apply Now</span><span aria-hidden="true">↗</span>
           </a>
           <a class="btn btn-secondary" href="#program"><span data-lang="ar">اكتشف البرنامج</span><span data-lang="en">Explore the Program</span></a>
@@ -158,7 +195,7 @@
           <div class="screen">
             <div class="screen-top">
               <span class="screen-title"><span data-lang="ar">مهارات المعلم الرقمي</span><span data-lang="en">Digital Teaching Skills</span></span>
-              <span class="screen-pill">TEACHER EMPOWERMENT PROGRAM</span>
+              <span class="screen-pill">TEACHER TRAINING PROGRAM</span>
             </div>
             <div class="screen-grid">
               <div class="mini-card"><div class="mini-icon">✦</div><strong>AI Tools</strong><small><span data-lang="ar">الذكاء الاصطناعي</span><span data-lang="en">Smarter preparation</span></small></div>
@@ -198,7 +235,7 @@
             <h2><span data-lang="ar">التعليم يتطور… وحان وقت تطورك معه.</span><span data-lang="en">Teaching is evolving. Grow with it.</span></h2>
             <p><span data-lang="ar">ابدأ بخطوة بسيطة نحو تطوير مهاراتك، واستكشف إمكانيات التكنولوجيا الحديثة في دعم رحلتك كمعلم.</span><span data-lang="en">Take a simple first step toward developing your skills and exploring how modern technology can support your teaching journey.</span></p>
           </div>
-          <a class="btn" href="https://forms.gle/mUb6VLZ2PFBnsTLp9" target="_blank" rel="noopener"><span data-lang="ar">قدّم الآن</span><span data-lang="en">Apply for Free</span> ↗</a>
+          <a class="btn" href="#apply"><span data-lang="ar">قدّم الآن</span><span data-lang="en">Apply for Free</span> ↗</a>
         </div>
       </div>
     </section>
@@ -226,7 +263,7 @@
         <div class="faq">
           <details><summary><span data-lang="ar">هل المشاركة في البرنامج مجانية؟</span><span data-lang="en">Is there a program fee?</span></summary><p><span data-lang="ar">تُعرض تفاصيل البرنامج عند التواصل مع المتقدمين.</span><span data-lang="en">Program details will be shared with applicants when they are contacted.</span></p></details>
           <details><summary><span data-lang="ar">هل يجب أن أكون قد درّست أونلاين من قبل؟</span><span data-lang="en">Do I need previous online teaching experience?</span></summary><p><span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا. اذكر مستوى خبرتك في نموذج التقديم.</span><span data-lang="en">You can apply whether or not you have taught online before. Please describe your experience in the application form.</span></p></details>
-          <details><summary><span data-lang="ar">كيف أقدّم؟</span><span data-lang="en">How can I apply?</span></summary><p><span data-lang="ar">اضغط على أي زر من أزرار التقديم في الصفحة، ثم أكمل نموذج Google Forms.</span><span data-lang="en">Click any application button on this page and complete the Google Forms application.</span></p></details>
+          <details><summary><span data-lang="ar">كيف أقدّم؟</span><span data-lang="en">How can I apply?</span></summary><p><span data-lang="ar">اضغط على أي زر من أزرار التقديم في الصفحة، ثم املأ الاستمارة الموجودة داخل الموقع.</span><span data-lang="en">Click any application button and complete the application form directly on this page.</span></p></details>
           <details><summary><span data-lang="ar">متى سأعرف تفاصيل البرنامج؟</span><span data-lang="en">When will I receive the program details?</span></summary><p><span data-lang="ar">سيتم التواصل مع المتقدمين بعد مراجعة طلباتهم لإبلاغهم بالتفاصيل والخطوات التالية.</span><span data-lang="en">Applicants will be contacted after their applications have been reviewed with further details and next steps.</span></p></details>
         </div>
       </div>
@@ -238,10 +275,86 @@
           <div class="kicker"><span data-lang="ar">خطوتك القادمة تبدأ هنا</span><span data-lang="en">YOUR NEXT STEP STARTS HERE</span></div>
           <h2><span data-lang="ar">مستعد تطوّر تجربتك في التدريس؟</span><span data-lang="en">Ready to grow as an online teacher?</span></h2>
           <p><span data-lang="ar">قدّم الآن في برنامج تدريب المعلمين، وابدأ استكشاف أدوات وأساليب جديدة تساعدك في رحلتك التعليمية.</span><span data-lang="en">Apply to the Teacher Training Program and start exploring new tools and approaches for your teaching journey.</span></p>
-          <a class="btn btn-primary" href="https://forms.gle/mUb6VLZ2PFBnsTLp9" target="_blank" rel="noopener"><span data-lang="ar">قدّم طلبك الآن</span><span data-lang="en">Submit Your Application</span> ↗</a>
+          <a class="btn btn-primary" href="#apply"><span data-lang="ar">قدّم طلبك الآن</span><span data-lang="en">Submit Your Application</span> ↗</a>
         </div>
       </div>
     </section>
+
+    <section id="apply" class="apply-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker"><span data-lang="ar">نموذج الالتحاق</span><span data-lang="en">APPLICATION FORM</span></div>
+          <h2><span data-lang="ar">ابدأ طلبك للانضمام إلى البرنامج</span><span data-lang="en">Apply to the Teacher Empowerment Program</span></h2>
+          <p><span data-lang="ar">شاركنا نبذة عنك وعن خبرتك واهتماماتك التعليمية. يُرجى إدخال بيانات صحيحة حتى نتمكن من التواصل معك.</span><span data-lang="en">Tell us about yourself, your experience, and your teaching interests. Please provide accurate details so we can contact you.</span></p>
+        </div>
+        <div class="apply-wrap">
+          <div class="apply-card">
+            <div class="apply-head">
+              <div class="apply-kicker">TEACHER EMPOWERMENT PROGRAM</div>
+              <h2><span data-lang="ar">استمارة التقديم</span><span data-lang="en">Your Application</span></h2>
+              <p><span data-lang="ar">خطوة واحدة تفصلك عن بداية رحلة جديدة في تطوير مهاراتك التعليمية.</span><span data-lang="en">One step closer to a new chapter in your professional development.</span></p>
+            </div>
+            <div class="apply-body">
+              <div class="form-progress"><span></span></div>
+              <form id="teacherApplication" action="https://docs.google.com/forms/d/e/1FAIpQLSeJ5CxSHmu4OyvpuyU-GLPTnpPwaVlRHS2f7qIIMTVRHUmcHQ/formResponse" method="POST" target="_blank">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="app-name"><span data-lang="ar">الاسم بالكامل</span><span data-lang="en">Full name</span> <i class="required">*</i></label>
+                    <input id="app-name" name="entry.78801371" autocomplete="name" required placeholder="اكتب اسمك بالكامل">
+                  </div>
+                  <div class="form-field">
+                    <label for="app-phone"><span data-lang="ar">رقم الهاتف / واتساب</span><span data-lang="en">Phone / WhatsApp</span> <i class="required">*</i></label>
+                    <input id="app-phone" name="entry.510591651" type="tel" autocomplete="tel" required placeholder="+20 ...">
+                  </div>
+                  <div class="form-field">
+                    <label for="app-age"><span data-lang="ar">السن</span><span data-lang="en">Age</span></label>
+                    <input id="app-age" name="entry.1376591873" type="number" min="16" max="99" placeholder="...">
+                  </div>
+                  <div class="form-field">
+                    <label for="app-subject"><span data-lang="ar">المادة أو التخصص الذي تدرّسه</span><span data-lang="en">Subject / Teaching specialism</span></label>
+                    <input id="app-subject" name="entry.746118929" placeholder="مثال: English, Maths, Science">
+                  </div>
+                  <div class="form-field full">
+                    <div class="field-label"><span data-lang="ar">ما الفئات العمرية التي تدرّس لها؟</span><span data-lang="en">Which age groups do you teach?</span></div>
+                    <div class="choice-row" style="margin-top:8px">
+                      <label class="choice"><input type="checkbox" name="entry.364235320" value="children"><span><span data-lang="ar">الأطفال</span><span data-lang="en">Children</span></span></label>
+                      <label class="choice"><input type="checkbox" name="entry.364235320" value="teenagers"><span><span data-lang="ar">المراهقون</span><span data-lang="en">Teenagers</span></span></label>
+                      <label class="choice"><input type="checkbox" name="entry.364235320" value="adults"><span><span data-lang="ar">الكبار</span><span data-lang="en">Adults</span></span></label>
+                    </div>
+                  </div>
+                  <div class="form-field full">
+                    <div class="field-label"><span data-lang="ar">هل سبق لك التدريس أونلاين؟</span><span data-lang="en">Have you taught online before?</span></div>
+                    <div class="choice-row" style="margin-top:8px">
+                      <label class="choice radio"><input type="radio" name="entry.852306748" value="Yes"><span><span data-lang="ar">نعم</span><span data-lang="en">Yes</span></span></label>
+                      <label class="choice radio"><input type="radio" name="entry.852306748" value="No"><span><span data-lang="ar">لا</span><span data-lang="en">No</span></span></label>
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label for="app-years"><span data-lang="ar">عدد سنوات الخبرة في التدريس</span><span data-lang="en">Years of teaching experience</span></label>
+                    <input id="app-years" name="entry.1473312186" type="number" min="0" max="60" placeholder="0">
+                  </div>
+                  <div class="form-field full">
+                    <label for="app-challenges"><span data-lang="ar">ما أبرز التحديات التي تواجهك في التدريس؟</span><span data-lang="en">What are the main challenges you face in teaching?</span></label>
+                    <textarea id="app-challenges" name="entry.1169120534" placeholder="اكتب إجابتك هنا..."></textarea>
+                  </div>
+                  <div class="form-field full">
+                    <label for="app-goals"><span data-lang="ar">ما الذي تتطلع إلى اكتسابه من البرنامج؟</span><span data-lang="en">What would you like to gain from this program?</span></label>
+                    <textarea id="app-goals" name="entry.1770386143" placeholder="شاركنا أهدافك وتوقعاتك..."></textarea>
+                  </div>
+                </div>
+                <p class="form-note"><span data-lang="ar">بالضغط على إرسال، سيتم إرسال إجاباتك إلى نموذج البرنامج لتظهر ضمن الردود المسجلة.</span><span data-lang="en">By submitting, your answers will be sent to the program's Google Forms response record.</span></p>
+                <div class="submit-row">
+                  <button class="submit-btn" type="submit"><span data-lang="ar">إرسال طلب التقديم</span><span data-lang="en">Submit Application</span> <span aria-hidden="true">↗</span></button>
+                  <span class="submit-hint"><span data-lang="ar">سيتم فتح صفحة تأكيد Google في نافذة جديدة بعد الإرسال.</span><span data-lang="en">A Google confirmation page will open in a new tab after submission.</span></span>
+                </div>
+                <div class="form-status" id="formStatus" role="status"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -262,6 +375,16 @@
       toggle.textContent = english ? 'العربية' : 'English';
     });
     document.getElementById('year').textContent = new Date().getFullYear();
+    const applicationForm = document.getElementById('teacherApplication');
+    if (applicationForm) {
+      applicationForm.addEventListener('submit', () => {
+        const status = document.getElementById('formStatus');
+        status.style.display = 'block';
+        status.textContent = body.classList.contains('english')
+          ? 'Your form is being sent. Please check the Google confirmation page that opens.'
+          : 'جارٍ إرسال طلبك. يُرجى التأكد من ظهور صفحة تأكيد Google في النافذة الجديدة.';
+      });
+    }
   </script>
 </body>
 </html>
