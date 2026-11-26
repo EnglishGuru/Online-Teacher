@@ -4,387 +4,2090 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f9fc">
-  <meta name="description" content="برنامج تدريب المعلمين — برنامج مجاني لتأهيل المعلمين للتدريس الأونلاين وتوظيف الذكاء الاصطناعي والأدوات التعليمية التفاعلية.">
-  <title>برنامج تدريب المعلمين | Online Teaching Qualification Program</title>
+  <meta name="description" content="Teacher Empowerment Program - برنامج تمكين المعلمين وتطوير مهارات التدريس الرقمي.">
+  <meta name="google" content="notranslate">
+  <meta http-equiv="Content-Language" content="ar">
+  <title>Teacher Empowerment Program | برنامج تمكين المعلمين</title>
+
   <style>
-    :root{
-      --ink:#172b4d; --muted:#65748b; --blue:#356fe0; --blue-dark:#2456bd;
-      --teal:#35a99b; --line:#e5eaf2; --surface:#ffffff; --bg:#f7f9fc;
-      --soft:#edf3ff; --radius:22px; --shadow:0 18px 55px rgba(25,49,89,.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter, "Segoe UI", Tahoma, Arial, sans-serif;line-height:1.7}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1120px, calc(100% - 40px));margin:auto}
-    .topbar{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:-.4px}
-    .brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,#4d83ed,#2a5ec9);display:grid;place-items:center;color:white;font-size:19px;box-shadow:0 8px 18px #356fe033}
-    .nav-actions{display:flex;align-items:center;gap:12px}
-    .lang-btn,.menu-link{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 15px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
-    .menu-link{border-color:transparent;background:transparent;color:var(--muted)}
-    .hero{padding:55px 0 72px;display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #dce7ff;background:#f0f5ff;color:#315fbd;border-radius:999px;font-size:12px;font-weight:800}
-    .eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
-    h1{font-size:clamp(37px,5vw,58px);line-height:1.15;letter-spacing:-1.8px;margin:20px 0 18px}
-    .hero p{font-size:17px;color:var(--muted);max-width:570px;margin:0 0 27px}
-    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
-    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border-radius:13px;padding:13px 21px;font-weight:800;font-size:14px;transition:.2s ease}
-    .btn-primary{background:var(--blue);color:white;box-shadow:0 10px 22px #356fe033}
-    .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px)}
-    .btn-secondary{background:white;border:1px solid var(--line);color:var(--ink)}
-    .free-note{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;margin-top:18px}
-    .free-note b{color:#248d7f}
-    .visual{min-height:390px;position:relative;display:grid;place-items:center}
-    .visual-card{position:relative;width:min(100%,450px);min-height:335px;border:1px solid #e3eaf6;border-radius:30px;background:linear-gradient(145deg,#fff,#f0f5ff);box-shadow:var(--shadow);padding:26px;overflow:hidden}
-    .visual-card:before,.visual-card:after{content:"";position:absolute;border-radius:50%;background:#dce8ff;opacity:.7}
-    .visual-card:before{width:210px;height:210px;top:-100px;left:-60px}
-    .visual-card:after{width:170px;height:170px;bottom:-100px;right:-50px;background:#d9f2ed}
-    .screen{position:relative;z-index:1;background:white;border:1px solid #e7ecf4;border-radius:19px;padding:17px;box-shadow:0 12px 30px #1b37600d}
-    .screen-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-    .screen-title{font-size:12px;font-weight:800}
-    .screen-pill{font-size:10px;color:#248d7f;background:#eaf8f5;border-radius:30px;padding:5px 9px;font-weight:800}
-    .screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-    .mini-card{background:#f7f9fd;border:1px solid #edf0f6;border-radius:13px;padding:14px;min-height:105px}
-    .mini-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#eaf0ff;color:#356fe0;font-size:16px;margin-bottom:8px}
-    .mini-card:nth-child(2) .mini-icon{background:#e9f7f4;color:#269786}
-    .mini-card:nth-child(3) .mini-icon{background:#f2edff;color:#8060ce}
-    .mini-card:nth-child(4) .mini-icon{background:#fff3e8;color:#cf8641}
-    .mini-card strong{display:block;font-size:11px}
-    .mini-card small{font-size:9px;color:var(--muted)}
-    .float-tag{position:absolute;z-index:2;background:white;border:1px solid var(--line);border-radius:14px;padding:11px 14px;box-shadow:0 10px 25px #1b376014;font-size:11px;font-weight:800}
-    .tag-one{bottom:27px;left:-9px}.tag-two{top:28px;right:-10px}
-    section{padding:67px 0}
-    .section-head{text-align:center;max-width:690px;margin:0 auto 34px}
-    .kicker{font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.7px;text-transform:uppercase}
-    h2{font-size:clamp(27px,3.5vw,38px);line-height:1.25;letter-spacing:-.8px;margin:9px 0 11px}
-    .section-head p{margin:0;color:var(--muted);font-size:15px}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{background:white;border:1px solid var(--line);border-radius:18px;padding:23px;min-height:185px}
-    .feature-icon{width:43px;height:43px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:20px;margin-bottom:15px}
-    .feature:nth-child(2) .feature-icon{background:#e9f7f4}
-    .feature:nth-child(3) .feature-icon{background:#f3efff}
-    .feature:nth-child(4) .feature-icon{background:#fff3e8}
-    .feature:nth-child(5) .feature-icon{background:#edf6ff}
-    .feature:nth-child(6) .feature-icon{background:#fceff4}
-    .feature h3{font-size:16px;margin:0 0 7px}
-    .feature p{font-size:13px;color:var(--muted);margin:0}
-    .band{background:#122b4c;color:white;border-radius:28px;padding:38px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-    .band h2{margin:0 0 8px;font-size:29px}
-    .band p{margin:0;color:#c4d1e2;font-size:14px;max-width:650px}
-    .band .btn{background:white;color:#18365e;white-space:nowrap}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .step{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}
-    .step-num{width:33px;height:33px;border-radius:11px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px}
-    .step h3{font-size:15px;margin:0 0 6px}.step p{font-size:13px;color:var(--muted);margin:0}
-    .faq{max-width:800px;margin:auto;display:grid;gap:10px}
-    details{background:white;border:1px solid var(--line);border-radius:14px;padding:15px 18px}
-    summary{font-weight:800;font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
-    summary::-webkit-details-marker{display:none}
-    summary:after{content:"+";color:var(--blue);font-size:19px;line-height:1}
-    details[open] summary:after{content:"−"}
-    details p{margin:12px 0 0;color:var(--muted);font-size:13px}
-    .final-cta{text-align:center;background:#edf3ff;border:1px solid #e0eaff;border-radius:27px;padding:44px 22px}
-    .final-cta p{color:var(--muted);max-width:590px;margin:0 auto 22px;font-size:14px}
-    footer{padding:27px 0 35px;color:var(--muted);font-size:12px}
-    .footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;border-top:1px solid var(--line);padding-top:22px}
-    [data-lang="en"]{display:none}
-    body.english{direction:ltr}
-    body.english [data-lang="ar"]{display:none}
-    body.english [data-lang="en"]{display:initial}
-    body.english .hero,body.english .band{direction:ltr}
-    body.english .brand{letter-spacing:0}
-    body.english .visual-card,body.english .feature,body.english .step{text-align:left}
-    body.english .free-note{direction:ltr}
-    @media(max-width:800px){
-      .hero{grid-template-columns:1fr;gap:20px;padding:35px 0 55px}
-      .visual{min-height:340px}
-      .feature-grid{grid-template-columns:repeat(2,1fr)}
-      .band{grid-template-columns:1fr;padding:29px}
-      .band .btn{justify-self:start}
-    }
-    @media(max-width:540px){
-      .container{width:min(100% - 28px,1120px)}
-      .topbar{padding:14px 0}
-      .menu-link{display:none}
-      h1{font-size:39px}
-      .hero p{font-size:15px}
-      .visual{min-height:310px}
-      .visual-card{min-height:285px;padding:17px}
-      .float-tag{font-size:9px}
-      section{padding:48px 0}
-      .feature-grid,.steps{grid-template-columns:1fr}
-      .feature{min-height:auto}
-      .footer-inner{flex-direction:column;text-align:center}
-      .actions .btn{width:100%}
+    :root {
+      --ink: #172b4d;
+      --muted: #65748b;
+      --blue: #356fe0;
+      --blue-dark: #2456bd;
+      --teal: #35a99b;
+      --line: #e5eaf2;
+      --surface: #ffffff;
+      --bg: #f7f9fc;
+      --soft: #edf3ff;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(25,49,89,.08);
     }
 
-    /* Teacher Empowerment application form */
-    .apply-section{background:linear-gradient(180deg,#f2f6ff 0%,#f7f9fc 100%)}
-    .apply-wrap{max-width:850px;margin:auto}
-    .apply-card{background:#fff;border:1px solid #e1e8f4;border-radius:26px;box-shadow:0 22px 65px rgba(25,49,89,.10);overflow:hidden}
-    .apply-head{padding:30px 34px;background:linear-gradient(120deg,#142f55,#2456a2);color:#fff;position:relative;overflow:hidden}
-    .apply-head:after{content:"";position:absolute;width:220px;height:220px;border:35px solid rgba(255,255,255,.07);border-radius:50%;left:-55px;top:-105px}
-    .apply-kicker{font-size:11px;letter-spacing:1.5px;font-weight:900;color:#b9d0ff}
-    .apply-head h2{font-size:30px;margin:8px 0;color:#fff}
-    .apply-head p{margin:0;color:#d9e5f7;font-size:14px;max-width:600px}
-    .apply-body{padding:30px 34px}
-    .form-progress{height:6px;background:#edf1f7;border-radius:20px;margin-bottom:24px;overflow:hidden}
-    .form-progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#35a99b,#4c7fe0);border-radius:20px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}
-    .form-field{display:flex;flex-direction:column;gap:7px}
-    .form-field.full{grid-column:1/-1}
-    .form-field label,.field-label{font-size:13px;font-weight:800;color:#203858}
-    .required{color:#d65a68}
-    .form-field input,.form-field textarea,.form-field select{width:100%;border:1px solid #dce4f0;border-radius:12px;padding:13px 14px;font:inherit;font-size:14px;color:#203858;background:#fbfcfe;outline:none;transition:.2s}
-    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:#5681dc;box-shadow:0 0 0 3px #5681dc18;background:#fff}
-    .form-field textarea{min-height:108px;resize:vertical}
-    .choice-row{display:flex;flex-wrap:wrap;gap:10px}
-    .choice{position:relative}
-    .choice input{position:absolute;opacity:0;pointer-events:none}
-    .choice span{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid #dce4f0;border-radius:12px;background:#fbfcfe;color:#52647c;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
-    .choice span:before{content:"";width:15px;height:15px;border:1.5px solid #aab8cb;border-radius:5px;background:#fff}
-    .choice.radio span:before{border-radius:50%}
-    .choice input:checked+span{border-color:#4b79d3;background:#eef4ff;color:#2456a2}
-    .choice input:checked+span:before{background:#356fe0;border-color:#356fe0;box-shadow:inset 0 0 0 3px #fff}
-    .form-note{font-size:12px;color:#718097;margin:20px 0 0}
-    .submit-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:22px;border-top:1px solid #edf0f5}
-    .submit-btn{border:0;cursor:pointer;background:linear-gradient(120deg,#356fe0,#2456bd);color:#fff;border-radius:13px;padding:14px 25px;font:inherit;font-weight:900;box-shadow:0 10px 22px #356fe033}
-    .submit-btn:hover{transform:translateY(-1px)}
-    .submit-hint{font-size:11px;color:#718097;max-width:330px}
-    .form-status{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:#eef8f5;color:#217b6e;font-size:13px}
-    @media(max-width:600px){.apply-head,.apply-body{padding:23px 19px}.apply-head h2{font-size:25px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.submit-row{align-items:stretch;flex-direction:column}.submit-btn{width:100%}}
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .topbar {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -.4px;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      border-radius: 13px;
+      background: linear-gradient(145deg,#4d83ed,#2a5ec9);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 19px;
+      box-shadow: 0 8px 18px #356fe033;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-btn,
+    .menu-link {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .menu-link {
+      border-color: transparent;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 55px 0 72px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid #dce7ff;
+      background: #f0f5ff;
+      color: #315fbd;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    h1 {
+      font-size: clamp(37px,5vw,58px);
+      line-height: 1.15;
+      letter-spacing: -1.8px;
+      margin: 20px 0 18px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 0 27px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      border-radius: 13px;
+      padding: 13px 21px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 22px #356fe033;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .free-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    .free-note b {
+      color: #248d7f;
+    }
+
+    .visual {
+      min-height: 390px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-card {
+      position: relative;
+      width: min(100%,450px);
+      min-height: 335px;
+      border: 1px solid #e3eaf6;
+      border-radius: 30px;
+      background: linear-gradient(145deg,#fff,#f0f5ff);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      overflow: hidden;
+    }
+
+    .visual-card:before,
+    .visual-card:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: #dce8ff;
+      opacity: .7;
+    }
+
+    .visual-card:before {
+      width: 210px;
+      height: 210px;
+      top: -100px;
+      left: -60px;
+    }
+
+    .visual-card:after {
+      width: 170px;
+      height: 170px;
+      bottom: -100px;
+      right: -50px;
+      background: #d9f2ed;
+    }
+
+    .screen {
+      position: relative;
+      z-index: 1;
+      background: white;
+      border: 1px solid #e7ecf4;
+      border-radius: 19px;
+      padding: 17px;
+      box-shadow: 0 12px 30px #1b37600d;
+    }
+
+    .screen-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .screen-title {
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .screen-pill {
+      font-size: 10px;
+      color: #248d7f;
+      background: #eaf8f5;
+      border-radius: 30px;
+      padding: 5px 9px;
+      font-weight: 800;
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .mini-card {
+      background: #f7f9fd;
+      border: 1px solid #edf0f6;
+      border-radius: 13px;
+      padding: 14px;
+      min-height: 105px;
+    }
+
+    .mini-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #eaf0ff;
+      color: #356fe0;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .mini-card:nth-child(2) .mini-icon {
+      background: #e9f7f4;
+      color: #269786;
+    }
+
+    .mini-card:nth-child(3) .mini-icon {
+      background: #f2edff;
+      color: #8060ce;
+    }
+
+    .mini-card:nth-child(4) .mini-icon {
+      background: #fff3e8;
+      color: #cf8641;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 11px;
+    }
+
+    .mini-card small {
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .float-tag {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 11px 14px;
+      box-shadow: 0 10px 25px #1b376014;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .tag-one {
+      bottom: 27px;
+      left: -9px;
+    }
+
+    .tag-two {
+      top: 28px;
+      right: -10px;
+    }
+
+    section {
+      padding: 67px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 690px;
+      margin: 0 auto 34px;
+    }
+
+    .kicker {
+      font-size: 12px;
+      color: var(--blue);
+      font-weight: 900;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(27px,3.5vw,38px);
+      line-height: 1.25;
+      letter-spacing: -.8px;
+      margin: 9px 0 11px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 23px;
+      min-height: 185px;
+    }
+
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      background: var(--soft);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .feature:nth-child(2) .feature-icon {
+      background: #e9f7f4;
+    }
+
+    .feature:nth-child(3) .feature-icon {
+      background: #f3efff;
+    }
+
+    .feature:nth-child(4) .feature-icon {
+      background: #fff3e8;
+    }
+
+    .feature:nth-child(5) .feature-icon {
+      background: #edf6ff;
+    }
+
+    .feature:nth-child(6) .feature-icon {
+      background: #fceff4;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin: 0 0 7px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .band {
+      background: #122b4c;
+      color: white;
+      border-radius: 28px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .band h2 {
+      margin: 0 0 8px;
+      font-size: 29px;
+    }
+
+    .band p {
+      margin: 0;
+      color: #c4d1e2;
+      font-size: 14px;
+      max-width: 650px;
+    }
+
+    .band .btn {
+      background: white;
+      color: #18365e;
+      white-space: nowrap;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .step-num {
+      width: 33px;
+      height: 33px;
+      border-radius: 11px;
+      background: #edf3ff;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      font-size: 15px;
+      margin: 0 0 6px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 15px 18px;
+    }
+
+    summary {
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:after {
+      content: "+";
+      color: var(--blue);
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    details[open] summary:after {
+      content: "−";
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: #edf3ff;
+      border: 1px solid #e0eaff;
+      border-radius: 27px;
+      padding: 44px 22px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      max-width: 590px;
+      margin: 0 auto 22px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 27px 0 35px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    [data-lang="en"] {
+      display: none;
+    }
+
+    body.english {
+      direction: ltr;
+    }
+
+    body.english [data-lang="ar"] {
+      display: none;
+    }
+
+    body.english [data-lang="en"] {
+      display: initial;
+    }
+
+    body.english .hero,
+    body.english .band {
+      direction: ltr;
+    }
+
+    body.english .brand {
+      letter-spacing: 0;
+    }
+
+    body.english .visual-card,
+    body.english .feature,
+    body.english .step {
+      text-align: left;
+    }
+
+    body.english .free-note {
+      direction: ltr;
+    }
+
+    /* Application form */
+
+    .apply-section {
+      background: linear-gradient(180deg,#eef4ff,#f7f9fc);
+    }
+
+    .apply-wrap {
+      max-width: 860px;
+      margin: auto;
+    }
+
+    .apply-card {
+      background: #fff;
+      border: 1px solid #e1e8f4;
+      border-radius: 26px;
+      box-shadow: 0 22px 65px rgba(25,49,89,.10);
+      overflow: hidden;
+    }
+
+    .apply-head {
+      padding: 30px 34px;
+      background: linear-gradient(120deg,#142f55,#2456a2);
+      color: #fff;
+    }
+
+    .apply-kicker {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      font-weight: 900;
+      color: #c6d8ff;
+    }
+
+    .apply-head h2 {
+      font-size: 30px;
+      margin: 8px 0;
+      color: #fff;
+    }
+
+    .apply-head p {
+      margin: 0;
+      color: #e0eaff;
+      font-size: 14px;
+    }
+
+    .apply-body {
+      padding: 30px 34px;
+    }
+
+    .form-progress {
+      height: 6px;
+      background: #edf1f7;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .form-progress span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,#35a99b,#4c7fe0);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .form-field.full {
+      grid-column: 1/-1;
+    }
+
+    .form-field label,
+    .field-label {
+      font-size: 13px;
+      font-weight: 800;
+      color: #203858;
+    }
+
+    .required-star {
+      color: #d64f62;
+    }
+
+    .form-field input:not([type="checkbox"]):not([type="radio"]),
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid #dce4f0;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font: inherit;
+      font-size: 14px;
+      color: #203858;
+      background: #fbfcfe;
+      outline: none;
+      transition: .2s;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: #5681dc;
+      box-shadow: 0 0 0 3px #5681dc18;
+      background: #fff;
+    }
+
+    .form-field textarea {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .form-field.invalid input:not([type="checkbox"]):not([type="radio"]),
+    .form-field.invalid textarea {
+      border-color: #d64f62;
+      background: #fffafb;
+    }
+
+    .field-error {
+      display: none;
+      color: #c53e52;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form-field.invalid .field-error {
+      display: block;
+    }
+
+    .choice-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 7px;
+    }
+
+    .choice {
+      position: relative;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+    }
+
+    .choice span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 15px;
+      border: 1px solid #dce4f0;
+      border-radius: 12px;
+      background: #fbfcfe;
+      color: #52647c;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .choice span:before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid #aab8cb;
+      border-radius: 5px;
+      background: #fff;
+      flex: 0 0 auto;
+    }
+
+    .choice.radio span:before {
+      border-radius: 50%;
+    }
+
+    .choice input:checked + span {
+      border-color: #4b79d3;
+      background: #eef4ff;
+      color: #2456a2;
+    }
+
+    .choice input:checked + span:before {
+      background: #356fe0;
+      border-color: #356fe0;
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .choice-group.invalid .choice span {
+      border-color: #d64f62;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: #718097;
+      margin: 20px 0 0;
+    }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .submit-btn {
+      border: 0;
+      cursor: pointer;
+      background: linear-gradient(120deg,#356fe0,#2456bd);
+      color: #fff;
+      border-radius: 13px;
+      padding: 14px 25px;
+      font: inherit;
+      font-weight: 900;
+      box-shadow: 0 10px 22px #356fe033;
+    }
+
+    .submit-btn:disabled {
+      opacity: .65;
+      cursor: wait;
+    }
+
+    .submit-hint {
+      font-size: 11px;
+      color: #718097;
+      max-width: 330px;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 17px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .form-status.error {
+      display: block;
+      background: #fff0f1;
+      color: #b52e43;
+    }
+
+    .form-status.pending {
+      display: block;
+      background: #eef4ff;
+      color: #2456a2;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #eaf8f3;
+      color: #217b65;
+    }
+
+    .hidden-submit-frame {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      left: -10000px;
+      top: -10000px;
+      border: 0;
+    }
+
+    @media(max-width:800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 35px 0 55px;
+      }
+
+      .visual {
+        min-height: 340px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .band {
+        grid-template-columns: 1fr;
+        padding: 29px;
+      }
+
+      .band .btn {
+        justify-self: start;
+      }
+    }
+
+    @media(max-width:600px) {
+      .container {
+        width: min(100% - 28px,1120px);
+      }
+
+      .topbar {
+        padding: 14px 0;
+      }
+
+      .menu-link {
+        display: none;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .visual {
+        min-height: 310px;
+      }
+
+      .visual-card {
+        min-height: 285px;
+        padding: 17px;
+      }
+
+      .float-tag {
+        font-size: 9px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .feature-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        min-height: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+
+      .apply-head,
+      .apply-body {
+        padding: 23px 19px;
+      }
+
+      .apply-head h2 {
+        font-size: 25px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .submit-row {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header class="container topbar">
-    <a class="brand" href="#" aria-label="برنامج تدريب المعلمين">
-      <span class="brand-mark">T</span><span>برنامج تدريب المعلمين</span>
+    <a class="brand" href="#" aria-label="Teacher Empowerment Program">
+      <span class="brand-mark">T</span>
+      <span>Teacher Empowerment Program</span>
     </a>
+
     <nav class="nav-actions">
-      <a class="menu-link" href="#program"><span data-lang="ar">عن البرنامج</span><span data-lang="en">About</span></a>
-      <a class="menu-link" href="#faq"><span data-lang="ar">الأسئلة الشائعة</span><span data-lang="en">FAQs</span></a>
-      <button class="lang-btn" id="languageToggle" type="button" aria-label="Switch language">English</button>
+      <a class="menu-link" href="#program">
+        <span data-lang="ar">عن البرنامج</span>
+        <span data-lang="en">About</span>
+      </a>
+
+      <a class="menu-link" href="#faq">
+        <span data-lang="ar">الأسئلة الشائعة</span>
+        <span data-lang="en">FAQs</span>
+      </a>
+
+      <button class="lang-btn" id="languageToggle" type="button">
+        English
+      </button>
     </nav>
   </header>
 
   <main>
+
+    <!-- HERO -->
+
     <div class="container hero">
+
       <div>
-        <span class="eyebrow"><span class="eyebrow-dot"></span><span data-lang="ar">برنامج تدريبي للمعلمين</span><span data-lang="en">TEACHER DEVELOPMENT PROGRAM</span></span>
+        <span class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span data-lang="ar">برنامج تمكين المعلمين</span>
+          <span data-lang="en">TEACHER EMPOWERMENT PROGRAM</span>
+        </span>
+
         <h1>
           <span data-lang="ar">طوّر مهاراتك، واصنع مستقبلًا أفضل للتعليم.</span>
           <span data-lang="en">Teach smarter. Create a better future for learning.</span>
         </h1>
+
         <p>
-          <span data-lang="ar">انطلق في رحلتك نحو التدريس الأونلاين باحترافية، وتعرّف على كيفية توظيف الذكاء الاصطناعي والأدوات التفاعلية لصناعة تجربة تعليمية أكثر تأثيرًا.</span>
-          <span data-lang="en">Build your confidence as an online teacher and discover how AI and interactive tools can help you create more engaging learning experiences.</span>
+          <span data-lang="ar">
+            انطلق في رحلتك نحو التدريس الأونلاين باحترافية، وتعرّف على كيفية توظيف الذكاء الاصطناعي والأدوات التفاعلية لصناعة تجربة تعليمية أكثر تأثيرًا.
+          </span>
+
+          <span data-lang="en">
+            Build your confidence as an online teacher and discover how AI and interactive tools can help you create more engaging learning experiences.
+          </span>
         </p>
+
         <div class="actions">
           <a class="btn btn-primary" href="#apply">
-            <span data-lang="ar">قدّم طلبك الآن</span><span data-lang="en">Apply Now</span><span aria-hidden="true">↗</span>
+            <span data-lang="ar">قدّم طلبك الآن</span>
+            <span data-lang="en">Apply Now</span>
+            <span aria-hidden="true">↗</span>
           </a>
-          <a class="btn btn-secondary" href="#program"><span data-lang="ar">اكتشف البرنامج</span><span data-lang="en">Explore the Program</span></a>
+
+          <a class="btn btn-secondary" href="#program">
+            <span data-lang="ar">اكتشف البرنامج</span>
+            <span data-lang="en">Explore the Program</span>
+          </a>
         </div>
-        <div class="free-note"><span>✦</span><b><span data-lang="ar">التقديم متاح</span><span data-lang="en">Applications are open</span></b><span data-lang="ar">· التقديم من خلال النموذج الإلكتروني</span><span data-lang="en">· Apply through our online form</span></div>
+
+        <div class="free-note">
+          <span>✦</span>
+          <b>
+            <span data-lang="ar">التقديم متاح</span>
+            <span data-lang="en">Applications are open</span>
+          </b>
+          <span data-lang="ar">· التقديم من خلال النموذج الإلكتروني</span>
+          <span data-lang="en">· Apply through our online form</span>
+        </div>
       </div>
 
-      <div class="visual" aria-label="Illustration of digital teaching skills">
+      <div class="visual">
         <div class="visual-card">
+
           <div class="screen">
             <div class="screen-top">
-              <span class="screen-title"><span data-lang="ar">مهارات المعلم الرقمي</span><span data-lang="en">Digital Teaching Skills</span></span>
-              <span class="screen-pill">TEACHER TRAINING PROGRAM</span>
+              <span class="screen-title">
+                <span data-lang="ar">مهارات المعلم الرقمي</span>
+                <span data-lang="en">Digital Teaching Skills</span>
+              </span>
+
+              <span class="screen-pill">TEACHER EMPOWERMENT</span>
             </div>
+
             <div class="screen-grid">
-              <div class="mini-card"><div class="mini-icon">✦</div><strong>AI Tools</strong><small><span data-lang="ar">الذكاء الاصطناعي</span><span data-lang="en">Smarter preparation</span></small></div>
-              <div class="mini-card"><div class="mini-icon">▦</div><strong>Interactive Learning</strong><small><span data-lang="ar">التعلم التفاعلي</span><span data-lang="en">Engage learners</span></small></div>
-              <div class="mini-card"><div class="mini-icon">▤</div><strong>Digital Content</strong><small><span data-lang="ar">المحتوى الرقمي</span><span data-lang="en">Create resources</span></small></div>
-              <div class="mini-card"><div class="mini-icon">◎</div><strong>Online Classes</strong><small><span data-lang="ar">الفصول الأونلاين</span><span data-lang="en">Teach with confidence</span></small></div>
+
+              <div class="mini-card">
+                <div class="mini-icon">✦</div>
+                <strong>AI Tools</strong>
+                <small>
+                  <span data-lang="ar">الذكاء الاصطناعي</span>
+                  <span data-lang="en">Smarter preparation</span>
+                </small>
+              </div>
+
+              <div class="mini-card">
+                <div class="mini-icon">▦</div>
+                <strong>Interactive Learning</strong>
+                <small>
+                  <span data-lang="ar">التعلم التفاعلي</span>
+                  <span data-lang="en">Engage learners</span>
+                </small>
+              </div>
+
+              <div class="mini-card">
+                <div class="mini-icon">▤</div>
+                <strong>Digital Content</strong>
+                <small>
+                  <span data-lang="ar">المحتوى الرقمي</span>
+                  <span data-lang="en">Create resources</span>
+                </small>
+              </div>
+
+              <div class="mini-card">
+                <div class="mini-icon">◎</div>
+                <strong>Online Classes</strong>
+                <small>
+                  <span data-lang="ar">الفصول الأونلاين</span>
+                  <span data-lang="en">Teach with confidence</span>
+                </small>
+              </div>
+
             </div>
           </div>
-          <div class="float-tag tag-one">✦ <span data-lang="ar">تعلّم · جرّب · طوّر</span><span data-lang="en">Learn · Create · Grow</span></div>
-          <div class="float-tag tag-two"> <span data-lang="ar">للمعلمين</span><span data-lang="en">FOR TEACHERS</span></div>
+
+          <div class="float-tag tag-one">
+            ✦
+            <span data-lang="ar">تعلّم · جرّب · طوّر</span>
+            <span data-lang="en">Learn · Create · Grow</span>
+          </div>
+
+          <div class="float-tag tag-two">
+            <span data-lang="ar">للمعلمين</span>
+            <span data-lang="en">FOR TEACHERS</span>
+          </div>
+
         </div>
       </div>
+
     </div>
+
+    <!-- PROGRAM FEATURES -->
 
     <section id="program">
       <div class="container">
+
         <div class="section-head">
-          <div class="kicker"><span data-lang="ar">ماذا ستكتسب؟</span><span data-lang="en">WHAT YOU'LL EXPLORE</span></div>
-          <h2><span data-lang="ar">مهارات عملية لعصر التعليم الرقمي</span><span data-lang="en">Practical skills for modern teaching</span></h2>
-          <p><span data-lang="ar">تعرّف على مجموعة من المهارات والأدوات التي تساعدك على تطوير التخطيط للدروس، والتفاعل مع الطلاب، وتقديم المحتوى بطرق مبتكرة.</span><span data-lang="en">Explore useful skills and tools to help you plan lessons, engage students, and deliver content in creative ways.</span></p>
+          <div class="kicker">
+            <span data-lang="ar">ماذا ستكتسب؟</span>
+            <span data-lang="en">WHAT YOU'LL EXPLORE</span>
+          </div>
+
+          <h2>
+            <span data-lang="ar">مهارات عملية لعصر التعليم الرقمي</span>
+            <span data-lang="en">Practical skills for modern teaching</span>
+          </h2>
+
+          <p>
+            <span data-lang="ar">
+              تعرّف على مجموعة من المهارات والأدوات التي تساعدك على تطوير التخطيط للدروس، والتفاعل مع الطلاب، وتقديم المحتوى بطرق مبتكرة.
+            </span>
+
+            <span data-lang="en">
+              Explore useful skills and tools to help you plan lessons, engage students, and deliver content in creative ways.
+            </span>
+          </p>
         </div>
+
         <div class="feature-grid">
-          <article class="feature"><div class="feature-icon">✦</div><h3><span data-lang="ar">الذكاء الاصطناعي في التعليم</span><span data-lang="en">AI in Education</span></h3><p><span data-lang="ar">اكتشف كيف تستفيد من أدوات AI في التخطيط وإعداد الأنشطة والأفكار التعليمية.</span><span data-lang="en">Explore how AI tools can support lesson planning, activity ideas, and teaching preparation.</span></p></article>
-          <article class="feature"><div class="feature-icon">▦</div><h3><span data-lang="ar">الأدوات التفاعلية</span><span data-lang="en">Interactive Teaching Tools</span></h3><p><span data-lang="ar">تعرّف على أدوات تجعل المشاركة والتفاعل جزءًا أساسيًا من الدرس.</span><span data-lang="en">Discover tools that make participation and interaction part of every lesson.</span></p></article>
-          <article class="feature"><div class="feature-icon">▤</div><h3><span data-lang="ar">تصميم المحتوى الرقمي</span><span data-lang="en">Digital Content Creation</span></h3><p><span data-lang="ar">طوّر طريقة إعداد العروض والمواد والموارد التعليمية الرقمية.</span><span data-lang="en">Improve the way you create presentations, learning materials, and digital resources.</span></p></article>
-          <article class="feature"><div class="feature-icon">⌘</div><h3><span data-lang="ar">إدارة الفصول الأونلاين</span><span data-lang="en">Online Classroom Skills</span></h3><p><span data-lang="ar">تعرّف على ممارسات تساعدك على تنظيم الحصة وإدارة وقتها بفاعلية.</span><span data-lang="en">Explore practices for organizing online lessons and managing class time effectively.</span></p></article>
-          <article class="feature"><div class="feature-icon">✓</div><h3><span data-lang="ar">التقييم والأنشطة</span><span data-lang="en">Assessment & Activities</span></h3><p><span data-lang="ar">اكتشف طرقًا متنوعة لبناء أسئلة وأنشطة تساعد على متابعة التعلّم.</span><span data-lang="en">Explore different ways to create questions and activities that support learning.</span></p></article>
-          <article class="feature"><div class="feature-icon">↗</div><h3><span data-lang="ar">تطوير الأداء المهني</span><span data-lang="en">Professional Growth</span></h3><p><span data-lang="ar">وسّع أدواتك وثقتك لتقديم تجربة تعليمية رقمية أكثر احترافية.</span><span data-lang="en">Expand your toolkit and confidence to deliver a more professional digital learning experience.</span></p></article>
+
+          <article class="feature">
+            <div class="feature-icon">✦</div>
+            <h3>
+              <span data-lang="ar">الذكاء الاصطناعي في التعليم</span>
+              <span data-lang="en">AI in Education</span>
+            </h3>
+            <p>
+              <span data-lang="ar">اكتشف كيف تستفيد من أدوات AI في التخطيط وإعداد الأنشطة والأفكار التعليمية.</span>
+              <span data-lang="en">Explore how AI tools can support lesson planning, activity ideas, and teaching preparation.</span>
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">▦</div>
+            <h3>
+              <span data-lang="ar">الأدوات التفاعلية</span>
+              <span data-lang="en">Interactive Teaching Tools</span>
+            </h3>
+            <p>
+              <span data-lang="ar">تعرّف على أدوات تجعل المشاركة والتفاعل جزءًا أساسيًا من الدرس.</span>
+              <span data-lang="en">Discover tools that make participation and interaction part of every lesson.</span>
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">▤</div>
+            <h3>
+              <span data-lang="ar">تصميم المحتوى الرقمي</span>
+              <span data-lang="en">Digital Content Creation</span>
+            </h3>
+            <p>
+              <span data-lang="ar">طوّر طريقة إعداد العروض والمواد والموارد التعليمية الرقمية.</span>
+              <span data-lang="en">Improve the way you create presentations, learning materials, and digital resources.</span>
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">⌘</div>
+            <h3>
+              <span data-lang="ar">إدارة الفصول الأونلاين</span>
+              <span data-lang="en">Online Classroom Skills</span>
+            </h3>
+            <p>
+              <span data-lang="ar">تعرّف على ممارسات تساعدك على تنظيم الحصة وإدارة وقتها بفاعلية.</span>
+              <span data-lang="en">Explore practices for organizing online lessons and managing class time effectively.</span>
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>
+              <span data-lang="ar">التقييم والأنشطة</span>
+              <span data-lang="en">Assessment & Activities</span>
+            </h3>
+            <p>
+              <span data-lang="ar">اكتشف طرقًا متنوعة لبناء أسئلة وأنشطة تساعد على متابعة التعلّم.</span>
+              <span data-lang="en">Explore different ways to create questions and activities that support learning.</span>
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">↗</div>
+            <h3>
+              <span data-lang="ar">تطوير الأداء المهني</span>
+              <span data-lang="en">Professional Growth</span>
+            </h3>
+            <p>
+              <span data-lang="ar">وسّع أدواتك وثقتك لتقديم تجربة تعليمية رقمية أكثر احترافية.</span>
+              <span data-lang="en">Expand your toolkit and confidence to deliver a more professional digital learning experience.</span>
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- CTA BAND -->
+
     <section>
       <div class="container">
+
         <div class="band">
           <div>
-            <h2><span data-lang="ar">التعليم يتطور… وحان وقت تطورك معه.</span><span data-lang="en">Teaching is evolving. Grow with it.</span></h2>
-            <p><span data-lang="ar">ابدأ بخطوة بسيطة نحو تطوير مهاراتك، واستكشف إمكانيات التكنولوجيا الحديثة في دعم رحلتك كمعلم.</span><span data-lang="en">Take a simple first step toward developing your skills and exploring how modern technology can support your teaching journey.</span></p>
+            <h2>
+              <span data-lang="ar">التعليم يتطور… وحان وقت تطورك معه.</span>
+              <span data-lang="en">Teaching is evolving. Grow with it.</span>
+            </h2>
+
+            <p>
+              <span data-lang="ar">ابدأ بخطوة بسيطة نحو تطوير مهاراتك، واستكشف إمكانيات التكنولوجيا الحديثة في دعم رحلتك كمعلم.</span>
+              <span data-lang="en">Take a simple first step toward developing your skills and exploring how modern technology can support your teaching journey.</span>
+            </p>
           </div>
-          <a class="btn" href="#apply"><span data-lang="ar">قدّم الآن</span><span data-lang="en">Apply for Free</span> ↗</a>
+
+          <a class="btn" href="#apply">
+            <span data-lang="ar">قدّم الآن</span>
+            <span data-lang="en">Apply for Free</span>
+            ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEPS -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-head">
+          <div class="kicker">
+            <span data-lang="ar">خطوات التقديم</span>
+            <span data-lang="en">HOW TO APPLY</span>
+          </div>
+
+          <h2>
+            <span data-lang="ar">ابدأ رحلتك في 3 خطوات</span>
+            <span data-lang="en">Get started in 3 simple steps</span>
+          </h2>
+        </div>
+
+        <div class="steps">
+
+          <article class="step">
+            <div class="step-num">01</div>
+            <h3>
+              <span data-lang="ar">املأ نموذج التقديم</span>
+              <span data-lang="en">Complete the application</span>
+            </h3>
+            <p>
+              <span data-lang="ar">أجب عن الأسئلة وشاركنا معلوماتك وخبراتك واهتماماتك.</span>
+              <span data-lang="en">Tell us about your background, experience, and learning interests.</span>
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-num">02</div>
+            <h3>
+              <span data-lang="ar">مراجعة الطلب</span>
+              <span data-lang="en">Application review</span>
+            </h3>
+            <p>
+              <span data-lang="ar">سيتم مراجعة البيانات التي ترسلها والتواصل معك بالتفاصيل.</span>
+              <span data-lang="en">Your submitted information will be reviewed, and you'll be contacted with further details.</span>
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-num">03</div>
+            <h3>
+              <span data-lang="ar">تابع رسالة التواصل</span>
+              <span data-lang="en">Look out for an update</span>
+            </h3>
+            <p>
+              <span data-lang="ar">تابع هاتفك وبريدك الإلكتروني لمعرفة الخطوات التالية.</span>
+              <span data-lang="en">Keep an eye on your phone and email for the next steps.</span>
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker"><span data-lang="ar">خطوات التقديم</span><span data-lang="en">HOW TO APPLY</span></div>
-          <h2><span data-lang="ar">ابدأ رحلتك في 3 خطوات</span><span data-lang="en">Get started in 3 simple steps</span></h2>
-        </div>
-        <div class="steps">
-          <article class="step"><div class="step-num">01</div><h3><span data-lang="ar">املأ نموذج التقديم</span><span data-lang="en">Complete the application</span></h3><p><span data-lang="ar">أجب عن الأسئلة وشاركنا معلوماتك وخبراتك واهتماماتك.</span><span data-lang="en">Tell us about your background, experience, and learning interests.</span></p></article>
-          <article class="step"><div class="step-num">02</div><h3><span data-lang="ar">مراجعة الطلب</span><span data-lang="en">Application review</span></h3><p><span data-lang="ar">سيتم مراجعة البيانات التي ترسلها والتواصل معك بالتفاصيل.</span><span data-lang="en">Your submitted information will be reviewed, and you'll be contacted with further details.</span></p></article>
-          <article class="step"><div class="step-num">03</div><h3><span data-lang="ar">تابع رسالة التواصل</span><span data-lang="en">Look out for an update</span></h3><p><span data-lang="ar">تابع هاتفك وبريدك الإلكتروني لمعرفة الخطوات التالية.</span><span data-lang="en">Keep an eye on your phone and email for the next steps.</span></p></article>
-        </div>
-      </div>
-    </section>
+    <!-- FAQ -->
 
     <section id="faq">
       <div class="container">
+
         <div class="section-head">
-          <div class="kicker"><span data-lang="ar">هل لديك سؤال؟</span><span data-lang="en">GOOD TO KNOW</span></div>
-          <h2><span data-lang="ar">أسئلة شائعة</span><span data-lang="en">Frequently asked questions</span></h2>
+          <div class="kicker">
+            <span data-lang="ar">هل لديك سؤال؟</span>
+            <span data-lang="en">GOOD TO KNOW</span>
+          </div>
+
+          <h2>
+            <span data-lang="ar">أسئلة شائعة</span>
+            <span data-lang="en">Frequently asked questions</span>
+          </h2>
         </div>
+
         <div class="faq">
-          <details><summary><span data-lang="ar">هل المشاركة في البرنامج مجانية؟</span><span data-lang="en">Is there a program fee?</span></summary><p><span data-lang="ar">تُعرض تفاصيل البرنامج عند التواصل مع المتقدمين.</span><span data-lang="en">Program details will be shared with applicants when they are contacted.</span></p></details>
-          <details><summary><span data-lang="ar">هل يجب أن أكون قد درّست أونلاين من قبل؟</span><span data-lang="en">Do I need previous online teaching experience?</span></summary><p><span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا. اذكر مستوى خبرتك في نموذج التقديم.</span><span data-lang="en">You can apply whether or not you have taught online before. Please describe your experience in the application form.</span></p></details>
-          <details><summary><span data-lang="ar">كيف أقدّم؟</span><span data-lang="en">How can I apply?</span></summary><p><span data-lang="ar">اضغط على أي زر من أزرار التقديم في الصفحة، ثم املأ الاستمارة الموجودة داخل الموقع.</span><span data-lang="en">Click any application button and complete the application form directly on this page.</span></p></details>
-          <details><summary><span data-lang="ar">متى سأعرف تفاصيل البرنامج؟</span><span data-lang="en">When will I receive the program details?</span></summary><p><span data-lang="ar">سيتم التواصل مع المتقدمين بعد مراجعة طلباتهم لإبلاغهم بالتفاصيل والخطوات التالية.</span><span data-lang="en">Applicants will be contacted after their applications have been reviewed with further details and next steps.</span></p></details>
+
+          <details>
+            <summary>
+              <span data-lang="ar">هل المشاركة في البرنامج مجانية؟</span>
+              <span data-lang="en">Is there a program fee?</span>
+            </summary>
+            <p>
+              <span data-lang="ar">تُعرض تفاصيل البرنامج عند التواصل مع المتقدمين.</span>
+              <span data-lang="en">Program details will be shared with applicants when they are contacted.</span>
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span data-lang="ar">هل يجب أن أكون قد درّست أونلاين من قبل؟</span>
+              <span data-lang="en">Do I need previous online teaching experience?</span>
+            </summary>
+            <p>
+              <span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا.</span>
+              <span data-lang="en">You can apply whether or not you have taught online before.</span>
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span data-lang="ar">كيف أقدّم؟</span>
+              <span data-lang="en">How can I apply?</span>
+            </summary>
+            <p>
+              <span data-lang="ar">اضغط على زر التقديم واملأ الاستمارة الموجودة داخل الصفحة.</span>
+              <span data-lang="en">Click an application button and complete the form on this page.</span>
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              <span data-lang="ar">متى سأعرف تفاصيل البرنامج؟</span>
+              <span data-lang="en">When will I receive the program details?</span>
+            </summary>
+            <p>
+              <span data-lang="ar">سيتم التواصل مع المتقدمين بعد مراجعة طلباتهم لإبلاغهم بالتفاصيل والخطوات التالية.</span>
+              <span data-lang="en">Applicants will be contacted after their applications have been reviewed with further details and next steps.</span>
+            </p>
+          </details>
+
         </div>
       </div>
     </section>
+
+    <!-- FINAL CTA -->
 
     <section>
       <div class="container">
+
         <div class="final-cta">
-          <div class="kicker"><span data-lang="ar">خطوتك القادمة تبدأ هنا</span><span data-lang="en">YOUR NEXT STEP STARTS HERE</span></div>
-          <h2><span data-lang="ar">مستعد تطوّر تجربتك في التدريس؟</span><span data-lang="en">Ready to grow as an online teacher?</span></h2>
-          <p><span data-lang="ar">قدّم الآن في برنامج تدريب المعلمين، وابدأ استكشاف أدوات وأساليب جديدة تساعدك في رحلتك التعليمية.</span><span data-lang="en">Apply to the Teacher Training Program and start exploring new tools and approaches for your teaching journey.</span></p>
-          <a class="btn btn-primary" href="#apply"><span data-lang="ar">قدّم طلبك الآن</span><span data-lang="en">Submit Your Application</span> ↗</a>
+          <div class="kicker">
+            <span data-lang="ar">خطوتك القادمة تبدأ هنا</span>
+            <span data-lang="en">YOUR NEXT STEP STARTS HERE</span>
+          </div>
+
+          <h2>
+            <span data-lang="ar">مستعد تطوّر تجربتك في التدريس؟</span>
+            <span data-lang="en">Ready to grow as an online teacher?</span>
+          </h2>
+
+          <p>
+            <span data-lang="ar">قدّم الآن في Teacher Empowerment Program، وابدأ استكشاف أدوات وأساليب جديدة تساعدك في رحلتك التعليمية.</span>
+            <span data-lang="en">Apply to the Teacher Empowerment Program and start exploring new tools and approaches for your teaching journey.</span>
+          </p>
+
+          <a class="btn btn-primary" href="#apply">
+            <span data-lang="ar">قدّم طلبك الآن</span>
+            <span data-lang="en">Submit Your Application</span>
+            ↗
+          </a>
         </div>
+
       </div>
     </section>
 
+    <!-- APPLICATION FORM -->
+
     <section id="apply" class="apply-section">
       <div class="container">
+
         <div class="section-head">
-          <div class="kicker"><span data-lang="ar">نموذج الالتحاق</span><span data-lang="en">APPLICATION FORM</span></div>
-          <h2><span data-lang="ar">ابدأ طلبك للانضمام إلى البرنامج</span><span data-lang="en">Apply to the Teacher Empowerment Program</span></h2>
-          <p><span data-lang="ar">شاركنا نبذة عنك وعن خبرتك واهتماماتك التعليمية. يُرجى إدخال بيانات صحيحة حتى نتمكن من التواصل معك.</span><span data-lang="en">Tell us about yourself, your experience, and your teaching interests. Please provide accurate details so we can contact you.</span></p>
+          <div class="kicker">TEACHER EMPOWERMENT PROGRAM</div>
+
+          <h2>قدّم طلبك للانضمام إلى البرنامج</h2>
+
+          <p>
+            املأ البيانات التالية بعناية. ستظهر لك رسالة بجوار أي خانة تحتاج إلى استكمال أو تصحيح.
+          </p>
         </div>
+
         <div class="apply-wrap">
           <div class="apply-card">
+
             <div class="apply-head">
               <div class="apply-kicker">TEACHER EMPOWERMENT PROGRAM</div>
-              <h2><span data-lang="ar">استمارة التقديم</span><span data-lang="en">Your Application</span></h2>
-              <p><span data-lang="ar">خطوة واحدة تفصلك عن بداية رحلة جديدة في تطوير مهاراتك التعليمية.</span><span data-lang="en">One step closer to a new chapter in your professional development.</span></p>
+              <h2>استمارة التقديم</h2>
+              <p>بياناتك تساعدنا على معرفة خبراتك واحتياجاتك التعليمية.</p>
             </div>
+
             <div class="apply-body">
-              <div class="form-progress"><span></span></div>
-              <form id="teacherApplication" action="https://docs.google.com/forms/d/e/1FAIpQLSeJ5CxSHmu4OyvpuyU-GLPTnpPwaVlRHS2f7qIIMTVRHUmcHQ/formResponse" method="POST" target="_blank">
+
+              <div class="form-progress">
+                <span></span>
+              </div>
+
+              <form
+                id="teacherApplication"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSeJ5CxSHmu4OyvpuyU-GLPTnpPwaVlRHS2f7qIIMTVRHUmcHQ/formResponse"
+                method="POST"
+                target="googleResponseFrame"
+                accept-charset="UTF-8"
+                novalidate
+              >
+
                 <div class="form-grid">
-                  <div class="form-field">
-                    <label for="app-name"><span data-lang="ar">الاسم بالكامل</span><span data-lang="en">Full name</span> <i class="required">*</i></label>
-                    <input id="app-name" name="entry.78801371" autocomplete="name" required placeholder="اكتب اسمك بالكامل">
+
+                  <!-- FULL NAME -->
+
+                  <div class="form-field" data-field="name">
+                    <label for="app-name">
+                      الاسم بالكامل <i class="required-star">*</i>
+                    </label>
+
+                    <input
+                      id="app-name"
+                      name="entry.78801371"
+                      type="text"
+                      autocomplete="name"
+                      required
+                    >
+
+                    <span class="field-error">
+                      من فضلك اكتب الاسم بالكامل.
+                    </span>
                   </div>
-                  <div class="form-field">
-                    <label for="app-phone"><span data-lang="ar">رقم الهاتف / واتساب</span><span data-lang="en">Phone / WhatsApp</span> <i class="required">*</i></label>
-                    <input id="app-phone" name="entry.510591651" type="tel" autocomplete="tel" required placeholder="+20 ...">
+
+                  <!-- PHONE -->
+
+                  <div class="form-field" data-field="phone">
+                    <label for="app-phone">
+                      رقم الهاتف / واتساب <i class="required-star">*</i>
+                    </label>
+
+                    <input
+                      id="app-phone"
+                      name="entry.510591651"
+                      type="tel"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      required
+                    >
+
+                    <span class="field-error">
+                      اكتب رقم هاتف صحيحًا من 7 إلى 15 رقمًا.
+                    </span>
                   </div>
-                  <div class="form-field">
-                    <label for="app-age"><span data-lang="ar">السن</span><span data-lang="en">Age</span></label>
-                    <input id="app-age" name="entry.1376591873" type="number" min="16" max="99" placeholder="...">
+
+                  <!-- AGE -->
+
+                  <div class="form-field" data-field="age">
+                    <label for="app-age">
+                      السن <i class="required-star">*</i>
+                    </label>
+
+                    <input
+                      id="app-age"
+                      name="entry.1376591873"
+                      type="number"
+                      min="1"
+                      max="99"
+                      step="1"
+                      required
+                    >
+
+                    <span class="field-error">
+                      اكتب سنًا صحيحًا من 1 إلى 99.
+                    </span>
                   </div>
-                  <div class="form-field">
-                    <label for="app-subject"><span data-lang="ar">المادة أو التخصص الذي تدرّسه</span><span data-lang="en">Subject / Teaching specialism</span></label>
-                    <input id="app-subject" name="entry.746118929" placeholder="مثال: English, Maths, Science">
+
+                  <!-- SUBJECT -->
+
+                  <div class="form-field" data-field="subject">
+                    <label for="app-subject">
+                      المادة أو التخصص الذي تدرّسه <i class="required-star">*</i>
+                    </label>
+
+                    <input
+                      id="app-subject"
+                      name="entry.746118929"
+                      type="text"
+                      required
+                    >
+
+                    <span class="field-error">
+                      من فضلك اكتب المادة أو التخصص.
+                    </span>
                   </div>
-                  <div class="form-field full">
-                    <div class="field-label"><span data-lang="ar">ما الفئات العمرية التي تدرّس لها؟</span><span data-lang="en">Which age groups do you teach?</span></div>
-                    <div class="choice-row" style="margin-top:8px">
-                      <label class="choice"><input type="checkbox" name="entry.364235320" value="children"><span><span data-lang="ar">الأطفال</span><span data-lang="en">Children</span></span></label>
-                      <label class="choice"><input type="checkbox" name="entry.364235320" value="teenagers"><span><span data-lang="ar">المراهقون</span><span data-lang="en">Teenagers</span></span></label>
-                      <label class="choice"><input type="checkbox" name="entry.364235320" value="adults"><span><span data-lang="ar">الكبار</span><span data-lang="en">Adults</span></span></label>
+
+                  <!-- AGE GROUPS -->
+
+                  <div class="form-field full choice-group" data-field="groups">
+
+                    <div class="field-label">
+                      ما الفئات العمرية التي تدرّس لها؟
+                      <i class="required-star">*</i>
                     </div>
-                  </div>
-                  <div class="form-field full">
-                    <div class="field-label"><span data-lang="ar">هل سبق لك التدريس أونلاين؟</span><span data-lang="en">Have you taught online before?</span></div>
-                    <div class="choice-row" style="margin-top:8px">
-                      <label class="choice radio"><input type="radio" name="entry.852306748" value="Yes"><span><span data-lang="ar">نعم</span><span data-lang="en">Yes</span></span></label>
-                      <label class="choice radio"><input type="radio" name="entry.852306748" value="No"><span><span data-lang="ar">لا</span><span data-lang="en">No</span></span></label>
+
+                    <div class="choice-row">
+
+                      <label class="choice">
+                        <input
+                          type="checkbox"
+                          name="entry.364235320"
+                          value="children"
+                        >
+                        <span>الأطفال</span>
+                      </label>
+
+                      <label class="choice">
+                        <input
+                          type="checkbox"
+                          name="entry.364235320"
+                          value="adults"
+                        >
+                        <span>الكبار</span>
+                      </label>
+
                     </div>
+
+                    <span class="field-error">
+                      اختَر فئة عمرية واحدة على الأقل.
+                    </span>
+
                   </div>
-                  <div class="form-field">
-                    <label for="app-years"><span data-lang="ar">عدد سنوات الخبرة في التدريس</span><span data-lang="en">Years of teaching experience</span></label>
-                    <input id="app-years" name="entry.1473312186" type="number" min="0" max="60" placeholder="0">
+
+                  <!-- ONLINE EXPERIENCE -->
+
+                  <div class="form-field full choice-group" data-field="online">
+
+                    <div class="field-label">
+                      هل سبق لك التدريس أونلاين؟
+                      <i class="required-star">*</i>
+                    </div>
+
+                    <div class="choice-row">
+
+                      <label class="choice radio">
+                        <input
+                          type="radio"
+                          name="entry.852306748"
+                          value="yes"
+                        >
+                        <span>نعم</span>
+                      </label>
+
+                      <label class="choice radio">
+                        <input
+                          type="radio"
+                          name="entry.852306748"
+                          value="no"
+                        >
+                        <span>لا</span>
+                      </label>
+
+                    </div>
+
+                    <span class="field-error">
+                      من فضلك اختر نعم أو لا.
+                    </span>
+
                   </div>
-                  <div class="form-field full">
-                    <label for="app-challenges"><span data-lang="ar">ما أبرز التحديات التي تواجهك في التدريس؟</span><span data-lang="en">What are the main challenges you face in teaching?</span></label>
-                    <textarea id="app-challenges" name="entry.1169120534" placeholder="اكتب إجابتك هنا..."></textarea>
+
+                  <!-- YEARS OF EXPERIENCE -->
+
+                  <div class="form-field" data-field="years">
+                    <label for="app-years">
+                      عدد سنوات الخبرة في التدريس
+                      <i class="required-star">*</i>
+                    </label>
+
+                    <input
+                      id="app-years"
+                      name="entry.1473312186"
+                      type="number"
+                      min="0"
+                      max="60"
+                      step="1"
+                      required
+                    >
+
+                    <span class="field-error">
+                      اكتب عدد سنوات صحيحًا من 0 إلى 60.
+                    </span>
                   </div>
-                  <div class="form-field full">
-                    <label for="app-goals"><span data-lang="ar">ما الذي تتطلع إلى اكتسابه من البرنامج؟</span><span data-lang="en">What would you like to gain from this program?</span></label>
-                    <textarea id="app-goals" name="entry.1770386143" placeholder="شاركنا أهدافك وتوقعاتك..."></textarea>
+
+                  <!-- CHALLENGES -->
+
+                  <div class="form-field full" data-field="challenges">
+                    <label for="app-challenges">
+                      ما أبرز التحديات التي تواجهك في التدريس؟
+                      <i class="required-star">*</i>
+                    </label>
+
+                    <textarea
+                      id="app-challenges"
+                      name="entry.1169120534"
+                      required
+                    ></textarea>
+
+                    <span class="field-error">
+                      من فضلك اكتب إجابتك عن التحديات.
+                    </span>
                   </div>
+
+                  <!-- GOALS -->
+
+                  <div class="form-field full" data-field="goals">
+                    <label for="app-goals">
+                      ما الذي تتطلع إلى اكتسابه من البرنامج؟
+                      <i class="required-star">*</i>
+                    </label>
+
+                    <textarea
+                      id="app-goals"
+                      name="entry.1770386143"
+                      required
+                    ></textarea>
+
+                    <span class="field-error">
+                      من فضلك اكتب ما تتطلع إلى اكتسابه.
+                    </span>
+                  </div>
+
                 </div>
-                <p class="form-note"><span data-lang="ar">بالضغط على إرسال، سيتم إرسال إجاباتك إلى نموذج البرنامج لتظهر ضمن الردود المسجلة.</span><span data-lang="en">By submitting, your answers will be sent to the program's Google Forms response record.</span></p>
+
+                <p class="form-note">
+                  لن يتم فتح Google Forms أمام المتقدم. يتم إرسال البيانات إلى النموذج في الخلفية.
+                </p>
+
                 <div class="submit-row">
-                  <button class="submit-btn" type="submit"><span data-lang="ar">إرسال طلب التقديم</span><span data-lang="en">Submit Application</span> <span aria-hidden="true">↗</span></button>
-                  <span class="submit-hint"><span data-lang="ar">سيتم فتح صفحة تأكيد Google في نافذة جديدة بعد الإرسال.</span><span data-lang="en">A Google confirmation page will open in a new tab after submission.</span></span>
+
+                  <button
+                    class="submit-btn"
+                    id="submitApplication"
+                    type="submit"
+                  >
+                    إرسال طلب التقديم ←
+                  </button>
+
+                  <span class="submit-hint">
+                    تأكد من مراجعة بياناتك قبل الإرسال.
+                  </span>
+
                 </div>
-                <div class="form-status" id="formStatus" role="status"></div>
+
+                <div
+                  class="form-status"
+                  id="formStatus"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+
               </form>
+
+              <!-- Hidden Google Forms response frame -->
+
+              <iframe
+                class="hidden-submit-frame"
+                name="googleResponseFrame"
+                id="googleResponseFrame"
+                title="إرسال الطلب في الخلفية"
+                tabindex="-1"
+                aria-hidden="true"
+              ></iframe>
+
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
     <div class="container footer-inner">
-      <div class="brand"><span class="brand-mark">T</span><span>برنامج تدريب المعلمين</span></div>
-      <span><span data-lang="ar">برنامج لتطوير مهارات التدريس الرقمي.</span><span data-lang="en">A teacher training program for digital teaching development.</span></span>
-      <span>© <span id="year"></span> برنامج تدريب المعلمين</span>
+
+      <div class="brand">
+        <span class="brand-mark">T</span>
+        <span>Teacher Empowerment Program</span>
+      </div>
+
+      <span>
+        <span data-lang="ar">برنامج لتطوير مهارات التدريس الرقمي.</span>
+        <span data-lang="en">A program for developing digital teaching skills.</span>
+      </span>
+
+      <span>
+        © <span id="year"></span> Teacher Empowerment Program
+      </span>
+
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById('languageToggle');
+    /* LANGUAGE SWITCH */
+
+    const toggle = document.getElementById("languageToggle");
     const body = document.body;
-    toggle.addEventListener('click', () => {
-      const english = body.classList.toggle('english');
-      document.documentElement.lang = english ? 'en' : 'ar';
-      document.documentElement.dir = english ? 'ltr' : 'rtl';
-      toggle.textContent = english ? 'العربية' : 'English';
+
+    toggle.addEventListener("click", function () {
+      const english = body.classList.toggle("english");
+
+      document.documentElement.lang = english ? "en" : "ar";
+      document.documentElement.dir = english ? "ltr" : "rtl";
+
+      toggle.textContent = english ? "العربية" : "English";
     });
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const applicationForm = document.getElementById('teacherApplication');
-    if (applicationForm) {
-      applicationForm.addEventListener('submit', () => {
-        const status = document.getElementById('formStatus');
-        status.style.display = 'block';
-        status.textContent = body.classList.contains('english')
-          ? 'Your form is being sent. Please check the Google confirmation page that opens.'
-          : 'جارٍ إرسال طلبك. يُرجى التأكد من ظهور صفحة تأكيد Google في النافذة الجديدة.';
-      });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* APPLICATION FORM */
+
+    const appForm = document.getElementById("teacherApplication");
+    const appFrame = document.getElementById("googleResponseFrame");
+    const appStatus = document.getElementById("formStatus");
+    const appSubmit = document.getElementById("submitApplication");
+
+    let appWaitingForGoogle = false;
+    let submissionStarted = false;
+    let responseTimer = null;
+
+
+    /* SHOW OR HIDE FIELD ERROR */
+
+    function setFieldError(key, invalid) {
+      const field = appForm.querySelector(
+        '[data-field="' + key + '"]'
+      );
+
+      if (field) {
+        field.classList.toggle("invalid", invalid);
+      }
     }
+
+
+    /* VALIDATE ALL FIELDS */
+
+    function validateApplication() {
+
+      let valid = true;
+      let firstInvalid = null;
+
+      const checks = [
+
+        [
+          "name",
+          function () {
+            return document
+              .getElementById("app-name")
+              .value.trim().length >= 2;
+          }
+        ],
+
+        [
+          "phone",
+          function () {
+            const phone = document
+              .getElementById("app-phone")
+              .value.trim();
+
+            const digits = phone.replace(/[^\d]/g, "");
+
+            return digits.length >= 7 && digits.length <= 15;
+          }
+        ],
+
+        [
+          "age",
+          function () {
+            const raw = document.getElementById("app-age").value;
+            const age = Number(raw);
+
+            return (
+              raw !== "" &&
+              Number.isInteger(age) &&
+              age >= 1 &&
+              age <= 99
+            );
+          }
+        ],
+
+        [
+          "subject",
+          function () {
+            return document
+              .getElementById("app-subject")
+              .value.trim().length > 0;
+          }
+        ],
+
+        [
+          "groups",
+          function () {
+            return appForm.querySelectorAll(
+              'input[name="entry.364235320"]:checked'
+            ).length > 0;
+          }
+        ],
+
+        [
+          "online",
+          function () {
+            return !!appForm.querySelector(
+              'input[name="entry.852306748"]:checked'
+            );
+          }
+        ],
+
+        [
+          "years",
+          function () {
+            const raw = document.getElementById("app-years").value;
+            const years = Number(raw);
+
+            return (
+              raw !== "" &&
+              Number.isInteger(years) &&
+              years >= 0 &&
+              years <= 60
+            );
+          }
+        ],
+
+        [
+          "challenges",
+          function () {
+            return document
+              .getElementById("app-challenges")
+              .value.trim().length > 0;
+          }
+        ],
+
+        [
+          "goals",
+          function () {
+            return document
+              .getElementById("app-goals")
+              .value.trim().length > 0;
+          }
+        ]
+
+      ];
+
+
+      checks.forEach(function (item) {
+
+        const key = item[0];
+        const test = item[1];
+        const isValid = test();
+
+        setFieldError(key, !isValid);
+
+        if (!isValid) {
+
+          valid = false;
+
+          if (!firstInvalid) {
+            firstInvalid = appForm.querySelector(
+              '[data-field="' + key + '"]'
+            );
+          }
+
+        }
+
+      });
+
+
+      if (!valid && firstInvalid) {
+
+        firstInvalid.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        const focusable = firstInvalid.querySelector(
+          'input:not([type="checkbox"]):not([type="radio"]), textarea, input[type="checkbox"], input[type="radio"]'
+        );
+
+        if (focusable) {
+          focusable.focus({ preventScroll: true });
+        }
+
+      }
+
+      return valid;
+
+    }
+
+
+    /* CLEAR FIELD ERROR WHILE USER IS EDITING */
+
+    appForm.querySelectorAll("input, textarea").forEach(function (element) {
+
+      element.addEventListener("input", function () {
+
+        const wrapper = element.closest("[data-field]");
+
+        if (wrapper) {
+          wrapper.classList.remove("invalid");
+        }
+
+      });
+
+      element.addEventListener("change", function () {
+
+        const wrapper = element.closest("[data-field]");
+
+        if (wrapper) {
+          wrapper.classList.remove("invalid");
+        }
+
+      });
+
+    });
+
+
+    /* GOOGLE RESPONSE FRAME */
+
+    appFrame.addEventListener("load", function () {
+
+      if (!appWaitingForGoogle) {
+        return;
+      }
+
+      appWaitingForGoogle = false;
+
+      if (responseTimer) {
+        clearTimeout(responseTimer);
+      }
+
+      appSubmit.disabled = false;
+      appSubmit.textContent = "إعادة إرسال الطلب";
+
+      appStatus.className = "form-status success";
+
+      appStatus.textContent =
+        "انتهت محاولة الإرسال ووصل رد من Google داخل الصفحة. لا يمكن للصفحة قراءة محتوى رد Google أو التأكد من تسجيل الإجابة داخل Responses؛ لذلك يُرجى مراجعة الردود للتأكد من وصول الطلب.";
+
+      /*
+        لا نمسح بيانات المستخدم تلقائيًا؛
+        لأن تحميل الإطار لا يثبت وحده أن الرد تم تسجيله.
+      */
+
+    });
+
+
+    /* FORM SUBMISSION */
+
+    appForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      if (submissionStarted) {
+        return;
+      }
+
+      appStatus.className = "form-status";
+      appStatus.textContent = "";
+
+
+      /* Validate before sending */
+
+      if (!validateApplication()) {
+
+        appStatus.className = "form-status error";
+
+        appStatus.textContent =
+          "راجع الخانات المحددة باللون الأحمر وأكمل البيانات المطلوبة.";
+
+        return;
+
+      }
+
+
+      /* Start submission */
+
+      submissionStarted = true;
+      appWaitingForGoogle = true;
+
+      appSubmit.disabled = true;
+      appSubmit.textContent = "جارٍ إرسال الطلب...";
+
+      appStatus.className = "form-status pending";
+
+      appStatus.textContent =
+        "جارٍ إرسال طلبك في الخلفية. لن تغادر هذه الصفحة.";
+
+
+      /*
+        Submit the original form directly to Google Forms.
+        The target is the hidden iframe, not a new browser tab.
+      */
+
+      HTMLFormElement.prototype.submit.call(appForm);
+
+
+      /* Timeout if no iframe response is received */
+
+      responseTimer = window.setTimeout(function () {
+
+        if (!appWaitingForGoogle) {
+          return;
+        }
+
+        appWaitingForGoogle = false;
+        submissionStarted = false;
+
+        appSubmit.disabled = false;
+        appSubmit.textContent = "إعادة المحاولة";
+
+        appStatus.className = "form-status error";
+
+        appStatus.textContent =
+          "لم يصل رد من Google خلال المهلة المحددة. لم يتم التأكد من تسجيل الطلب. بياناتك ما زالت موجودة؛ يمكنك المحاولة مرة أخرى.";
+
+      }, 15000);
+
+    });
+
   </script>
+
 </body>
 </html>
