@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -378,14 +379,21 @@
     }
 
     .feature-icon {
-      width:43px;
-      height:43px;
+      width:60px;
+      height:60px;
       border-radius:14px;
       background:var(--soft);
       display:grid;
       place-items:center;
-      font-size:20px;
+      overflow:hidden;
       margin-bottom:15px;
+    }
+
+    .feature-icon img {
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:contain;
     }
 
     .feature:nth-child(2) .feature-icon { background:#e9f7f4; }
@@ -510,6 +518,19 @@
       margin:12px 0 0;
       color:var(--muted);
       font-size:13px;
+      line-height:1.9;
+    }
+
+    .faq-answer-paragraph {
+      margin-top:12px;
+    }
+
+    .faq-answer-paragraph p {
+      margin:0 0 12px;
+    }
+
+    .faq-answer-paragraph p:last-child {
+      margin-bottom:0;
     }
 
     .final-cta {
@@ -1057,7 +1078,9 @@
         <div class="feature-grid">
 
           <article class="feature">
-            <div class="feature-icon">✦</div>
+            <div class="feature-icon">
+              <img src="ai-education.png" alt="الذكاء الاصطناعي في التعليم">
+            </div>
             <h3>
               <span data-lang="ar">الذكاء الاصطناعي في التعليم</span>
               <span data-lang="en">AI in Education</span>
@@ -1069,7 +1092,9 @@
           </article>
 
           <article class="feature">
-            <div class="feature-icon">▦</div>
+            <div class="feature-icon">
+              <img src="interactive-tools.png" alt="الأدوات التفاعلية">
+            </div>
             <h3>
               <span data-lang="ar">الأدوات التفاعلية</span>
               <span data-lang="en">Interactive Teaching Tools</span>
@@ -1081,7 +1106,9 @@
           </article>
 
           <article class="feature">
-            <div class="feature-icon">▤</div>
+            <div class="feature-icon">
+              <img src="digital-content.png" alt="تصميم المحتوى الرقمي">
+            </div>
             <h3>
               <span data-lang="ar">تصميم المحتوى الرقمي</span>
               <span data-lang="en">Digital Content Creation</span>
@@ -1093,7 +1120,9 @@
           </article>
 
           <article class="feature">
-            <div class="feature-icon">⌘</div>
+            <div class="feature-icon">
+              <img src="online-classroom.png" alt="إدارة الفصول الأونلاين">
+            </div>
             <h3>
               <span data-lang="ar">إدارة الفصول الأونلاين</span>
               <span data-lang="en">Online Classroom Skills</span>
@@ -1105,7 +1134,9 @@
           </article>
 
           <article class="feature">
-            <div class="feature-icon">✓</div>
+            <div class="feature-icon">
+              <img src="assessment-activities.png" alt="التقييم والأنشطة">
+            </div>
             <h3>
               <span data-lang="ar">التقييم والأنشطة</span>
               <span data-lang="en">Assessment & Activities</span>
@@ -1117,7 +1148,9 @@
           </article>
 
           <article class="feature">
-            <div class="feature-icon">↗</div>
+            <div class="feature-icon">
+              <img src="professional-development.png" alt="تطوير الأداء المهني">
+            </div>
             <h3>
               <span data-lang="ar">تطوير الأداء المهني</span>
               <span data-lang="en">Professional Growth</span>
@@ -1233,47 +1266,35 @@
         <div class="faq">
 
           <details>
-            <summary>
-              <span data-lang="ar">هل المشاركة في البرنامج مجانية؟</span>
-              <span data-lang="en">Is there a program fee?</span>
-            </summary>
-            <p>
-              <span data-lang="ar">تُعرض تفاصيل البرنامج عند التواصل مع المتقدمين.</span>
-              <span data-lang="en">Program details will be shared with applicants when they are contacted.</span>
-            </p>
+            <summary>السؤال الأول تفاصيل البرنامج؟</summary>
+
+            <div class="faq-answer-paragraph">
+              <p>صُمّم هذا البرنامج ليكون خطوة عملية حقيقية لكل معلم ومعلمة يريدون تطوير أدائهم في التدريس الأونلاين والرقمي، والانتقال من الشرح التقليدي إلى حصص أكثر تفاعلاً، وتنظيمًا، وتأثيرًا على الطلاب.</p>
+
+              <p>خلال البرنامج، لن تكتفي بالمعرفة النظرية، بل ستتدرّب على <strong>توظيف أدوات الذكاء الاصطناعي</strong> في تحضير الدروس وصناعة الأفكار والأنشطة والأسئلة في وقت أقل وبجودة أعلى، إلى جانب <strong>الأدوات التفاعلية</strong> التي تجعل الطالب مشاركًا نشطًا طوال الحصة وليس مجرد مستمع.</p>
+
+              <p>كما يركّز البرنامج على <strong>تصميم المحتوى الرقمي</strong>، وإدارة الحصة الأونلاين باحترافية، وبناء أنشطة وتقييمات ذكية تناسب الفئات العمرية المختلفة (أطفال، مراهقين، كبار)، بحيث يخرج المتدرب بأدوات تطبيقية يستطيع استخدامها مباشرة في حصصه الفعلية.</p>
+            </div>
           </details>
 
           <details>
-            <summary>
-              <span data-lang="ar">هل يجب أن أكون قد درّست أونلاين من قبل؟</span>
-              <span data-lang="en">Do I need previous online teaching experience?</span>
-            </summary>
-            <p>
-              <span data-lang="ar">يمكنك إرسال طلبك سواء كانت لديك خبرة سابقة في التدريس الأونلاين أم لا. اذكر مستوى خبرتك في نموذج التقديم.</span>
-              <span data-lang="en">You can apply whether or not you have taught online before. Please describe your experience in the application form.</span>
-            </p>
+            <summary>السؤال الثاني أنا مش شاطر في التكنولوجيا ومش بعرف أستخدم البرامج دي، هقدر أكمّل؟</summary>
+            <p>أيوة طبعًا، إحنا بنبدأ من الأساسيات ببساطة ومن غير تعقيد—من فتح الحصة على Zoom و Google Meet، لحد استخدام الذكاء الاصطناعي، Canva، والألعاب التفاعلية والامتحانات. المهم إنك تكون حابب تتعلّم وتجرّب.</p>
           </details>
 
           <details>
-            <summary>
-              <span data-lang="ar">كيف أقدّم؟</span>
-              <span data-lang="en">How can I apply?</span>
-            </summary>
-            <p>
-              <span data-lang="ar">اضغط على أي زر من أزرار التقديم في الصفحة، ثم املأ الاستمارة الموجودة داخل الموقع.</span>
-              <span data-lang="en">Click any application button and complete the application form directly on this page.</span>
-            </p>
+            <summary>السؤال الثالث هل هحتاج أجهزة أو برامج غالية عشان أقدر أطبّق؟</summary>
+            <p>في البداية هتحتاج جهاز (لاب أو كمبيوتر أو حتى موبايل في بعض الخطوات، واللاب/الكمبيوتر بيكون أسهل في التصميم والتحضير) واتصال إنترنت كويس، ومعظم الأدوات اللي هنشتغل بيها ليها نسخ مجانية أو خطط مناسبة هنوضّحها وقت التدريب.</p>
           </details>
 
           <details>
-            <summary>
-              <span data-lang="ar">متى سأعرف تفاصيل البرنامج؟</span>
-              <span data-lang="en">When will I receive the program details?</span>
-            </summary>
-            <p>
-              <span data-lang="ar">سيتم التواصل مع المتقدمين بعد مراجعة طلباتهم لإبلاغهم بالتفاصيل والخطوات التالية.</span>
-              <span data-lang="en">Applicants will be contacted after their applications have been reviewed with further details and next steps.</span>
-            </p>
+            <summary>السؤال الرابع رسوم الاشتراك في البرنامج؟</summary>
+            <p>بعد مراجعة طلبك ، بنوضّح لك كل التفاصيل الخاصة بالانضمام والرسوم.</p>
+          </details>
+
+          <details>
+            <summary>السؤال الخامس كيف أقدّم ؟</summary>
+            <p>اضغط على أي زر تقديم في الصفحة، املأ بياناتك في نموذج التقديم بدقة، وهنتواصل معاك حالا.</p>
           </details>
 
         </div>
