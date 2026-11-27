@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f9fc">
-  <meta name="description" content="برنامج تدريب المعلمين — برنامج لتطوير مهارات التدريس الرقمي.">
+  <meta name="description" content="برنامج إعداد وتأهيل المعلم الرقمي | Digital Teacher Program - STARVERA Educational Academy.">
   <meta name="google" content="notranslate">
   <meta http-equiv="Content-Language" content="ar">
-  <title>Teacher Empowerment Program</title>
+  <title>برنامج إعداد وتأهيل المعلم الرقمي | Digital Teacher Program</title>
 
   <style>
     :root {
@@ -56,20 +55,32 @@
       align-items:center;
       gap:11px;
       font-weight:800;
-      font-size:19px;
+      font-size:17px;
       letter-spacing:-.4px;
     }
 
-    .brand-mark {
-      width:39px;
-      height:39px;
-      border-radius:13px;
-      background:linear-gradient(145deg,#4d83ed,#2a5ec9);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      font-size:19px;
-      box-shadow:0 8px 18px #356fe033;
+    .brand-logo {
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      object-fit:contain;
+      flex-shrink:0;
+      background:#071329;
+      box-shadow:0 5px 15px rgba(7,19,41,.15);
+    }
+
+    .brand-name {
+      display:flex;
+      flex-direction:column;
+      line-height:1.5;
+    }
+
+    .brand-name small {
+      font-size:11px;
+      color:var(--muted);
+      font-weight:700;
+      direction:ltr;
+      text-align:right;
     }
 
     .nav-actions {
@@ -542,6 +553,10 @@
 
     body.english .brand { letter-spacing:0; }
 
+    body.english .brand-name small {
+      text-align:left;
+    }
+
     body.english .visual-card,
     body.english .feature,
     body.english .step { text-align:left; }
@@ -565,6 +580,9 @@
       .container { width:min(100% - 28px,1120px); }
       .topbar { padding:14px 0; }
       .menu-link { display:none; }
+      .brand { font-size:14px; gap:8px; }
+      .brand-logo { width:43px; height:43px; }
+      .brand-name small { font-size:9px; }
       h1 { font-size:39px; }
       .hero p { font-size:15px; }
       .visual { min-height:310px; }
@@ -824,6 +842,7 @@
       border-radius:12px;
       font-size:14px;
       line-height:1.8;
+      white-space:pre-line;
     }
 
     .form-status.pending {
@@ -875,9 +894,16 @@
 <body>
 
   <header class="container topbar">
-    <a class="brand" href="#" aria-label="Teacher Empowerment Program">
-      <span class="brand-mark">T</span>
-      <span>Teacher Empowerment Program</span>
+    <a class="brand" href="#" aria-label="Digital Teacher Program">
+      <img
+        class="brand-logo"
+        src="starvera-logo.jpg"
+        alt="STARVERA Educational Academy Logo">
+      <span class="brand-name">
+        <span data-lang="ar">برنامج إعداد وتأهيل المعلم الرقمي</span>
+        <span data-lang="en">Digital Teacher Program</span>
+        <small>STARVERA EDUCATIONAL ACADEMY</small>
+      </span>
     </a>
 
     <nav class="nav-actions">
@@ -904,8 +930,8 @@
       <div>
         <span class="eyebrow">
           <span class="eyebrow-dot"></span>
-          <span data-lang="ar">برنامج تدريبي للمعلمين</span>
-          <span data-lang="en">TEACHER DEVELOPMENT PROGRAM</span>
+          <span data-lang="ar">برنامج إعداد وتأهيل المعلم الرقمي</span>
+          <span data-lang="en">DIGITAL TEACHER PROGRAM</span>
         </span>
 
         <h1>
@@ -951,7 +977,7 @@
                 <span data-lang="ar">مهارات المعلم الرقمي</span>
                 <span data-lang="en">Digital Teaching Skills</span>
               </span>
-              <span class="screen-pill">TEACHER TRAINING PROGRAM</span>
+              <span class="screen-pill">DIGITAL TEACHER PROGRAM</span>
             </div>
 
             <div class="screen-grid">
@@ -1269,8 +1295,8 @@
           </h2>
 
           <p>
-            <span data-lang="ar">قدّم الآن في Teacher Empowerment Program، وابدأ استكشاف أدوات وأساليب جديدة تساعدك في رحلتك التعليمية.</span>
-            <span data-lang="en">Apply to the Teacher Empowerment Program and start exploring new tools and approaches for your teaching journey.</span>
+            <span data-lang="ar">قدّم الآن في برنامج إعداد وتأهيل المعلم الرقمي، وابدأ استكشاف أدوات وأساليب جديدة تساعدك في رحلتك التعليمية.</span>
+            <span data-lang="en">Apply to the Digital Teacher Program and start exploring new tools and approaches for your teaching journey.</span>
           </p>
 
           <a class="btn btn-primary" href="#apply">
@@ -1298,7 +1324,7 @@
 
           <h2>
             <span data-lang="ar">ابدأ طلبك للانضمام إلى البرنامج</span>
-            <span data-lang="en">Apply to the Teacher Empowerment Program</span>
+            <span data-lang="en">Apply to the Digital Teacher Program</span>
           </h2>
 
           <p>
@@ -1313,7 +1339,7 @@
           <div class="apply-card">
 
             <div class="apply-head">
-              <div class="apply-kicker">TEACHER EMPOWERMENT PROGRAM</div>
+              <div class="apply-kicker">DIGITAL TEACHER PROGRAM</div>
 
               <h2>
                 <span data-lang="ar">استمارة التقديم</span>
@@ -1605,8 +1631,15 @@
     <div class="container footer-inner">
 
       <div class="brand">
-        <span class="brand-mark">T</span>
-        <span>Teacher Empowerment Program</span>
+        <img
+          class="brand-logo"
+          src="starvera-logo.jpg"
+          alt="STARVERA Educational Academy Logo">
+        <span class="brand-name">
+          <span data-lang="ar">برنامج إعداد وتأهيل المعلم الرقمي</span>
+          <span data-lang="en">Digital Teacher Program</span>
+          <small>STARVERA EDUCATIONAL ACADEMY</small>
+        </span>
       </div>
 
       <span>
@@ -1615,7 +1648,7 @@
       </span>
 
       <span>
-        © <span id="year"></span> Teacher Empowerment Program
+        © <span id="year"></span> Digital Teacher Program
       </span>
 
     </div>
@@ -1948,15 +1981,13 @@
       submitButton.textContent = 'تم إرسال الطلب';
 
       showStatus(
-        شكرًا لتقديمك في برنامج إعداد المعلم الرقمى!
-
-تم استلام طلب التقديم الخاص بك بنجاح.
-
-نقدّر اهتمامك بتطوير مهاراتك في مجال التدريس، واكتشاف إمكانيات الذكاء الاصطناعي والأدوات التعليمية التفاعلية وتوظيفها في العملية التعليمية.
-
-سيقوم فريقنا بمراجعة طلب التقديم الخاص بك، وسنتواصل معك لإبلاغك بالخطوات القادمة.
-
-معًا نرتقي بمهاراتك في التدريس الأونلاين ونأخذها إلى مستوى جديد من الاحترافية!);
+        'success',
+        'شكرًا لتقديمك في برنامج إعداد وتأهيل المعلم الرقمي!\n\n' +
+        'تم استلام طلب التقديم الخاص بك بنجاح.\n\n' +
+        'نقدّر اهتمامك بتطوير مهاراتك في مجال التدريس، واكتشاف إمكانيات الذكاء الاصطناعي والأدوات التعليمية التفاعلية وتوظيفها في العملية التعليمية.\n\n' +
+        'سيقوم فريقنا بمراجعة طلب التقديم الخاص بك، وسنتواصل معك لإبلاغك بالخطوات القادمة.\n\n' +
+        'معًا نرتقي بمهاراتك في التدريس الأونلاين ونأخذها إلى مستوى جديد من الاحترافية!'
+      );
 
       /*
         Do not reset the form automatically.
