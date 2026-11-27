@@ -1345,6 +1345,7 @@
                 action="https://docs.google.com/forms/d/e/1FAIpQLSeJ5CxSHmu4OyvpuyU-GLPTnpPwaVlRHS2f7qIIMTVRHUmcHQ/formResponse"
                 method="POST"
                 target="googleResponseFrame"
+                accept-charset="UTF-8"
                 novalidate>
 
                 <div class="form-grid">
@@ -1398,9 +1399,9 @@
                     <input
                       id="app-age"
                       name="entry.1376591873"
-                      type="number"
-                      min="1"
-                      max="99"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="off"
                       required
                       placeholder="...">
 
@@ -1514,9 +1515,9 @@
                     <input
                       id="app-years"
                       name="entry.1473312186"
-                      type="number"
-                      min="0"
-                      max="60"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="off"
                       required
                       placeholder="0">
 
@@ -1688,10 +1689,30 @@
     }
 
 
+    /* Convert Arabic and Persian numerals to standard digits */
+
+    function normalizeDigits(value) {
+      return String(value).replace(/[٠-٩۰-۹]/g, digit => {
+        const code = digit.charCodeAt(0);
+        return String(code >= 0x06F0 && code <= 0x06F9
+          ? code - 0x06F0
+          : code - 0x0660);
+      });
+    }
+
+
     /* Validate form */
 
     function validateApplication() {
       clearAllErrors();
+
+      const phoneInput = document.getElementById('app-phone');
+      const ageInput = document.getElementById('app-age');
+      const yearsInput = document.getElementById('app-years');
+
+      phoneInput.value = normalizeDigits(phoneInput.value);
+      ageInput.value = normalizeDigits(ageInput.value);
+      yearsInput.value = normalizeDigits(yearsInput.value);
 
       let valid = true;
 
@@ -1904,7 +1925,7 @@
 
       }, 20000);
 
-      applicationForm.submit();
+      HTMLFormElement.prototype.submit.call(applicationForm);
 
     });
 
@@ -1924,11 +1945,11 @@
       }
 
       submitButton.disabled = true;
-      submitButton.textContent = 'تم إرسال الطلب بنجاح';
+      submitButton.textContent = 'تم إرسال الطلب';
 
       showStatus(
         'success',
-        'شكرًا لك! تم استلام طلب التقديم بنجاح. يسعدنا اهتمامك بالانضمام إلى Teacher Empowerment Program. سنتواصل معك قريبًا.'
+        'شكرًا لك! تم إرسال طلبك من خلال الصفحة. لا تستطيع الصفحة قراءة تأكيد Google Forms النهائي؛ لذلك يُرجى مراجعة قسم الردود في Google Forms للتأكد من تسجيل الطلب قبل اعتبار الإرسال مؤكّدًا. يسعدنا اهتمامك بالانضمام إلى Teacher Empowerment Program.'
       );
 
       /*
