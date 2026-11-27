@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -10,25 +11,24 @@
   <title>Teacher Empowerment Program</title>
 
   <style>
-    :root{
+    :root {
       --ink:#172b4d;
       --muted:#65748b;
       --blue:#356fe0;
       --blue-dark:#2456bd;
       --teal:#35a99b;
       --line:#e5eaf2;
-      --surface:#ffffff;
+      --surface:#fff;
       --bg:#f7f9fc;
       --soft:#edf3ff;
       --radius:22px;
       --shadow:0 18px 55px rgba(25,49,89,.08);
     }
 
-    *{box-sizing:border-box}
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
 
-    html{scroll-behavior:smooth}
-
-    body{
+    body {
       margin:0;
       background:var(--bg);
       color:var(--ink);
@@ -36,14 +36,14 @@
       line-height:1.7;
     }
 
-    a{color:inherit;text-decoration:none}
+    a { color:inherit; text-decoration:none; }
 
-    .container{
+    .container {
       width:min(1120px,calc(100% - 40px));
       margin:auto;
     }
 
-    .topbar{
+    .topbar {
       padding:20px 0;
       display:flex;
       align-items:center;
@@ -51,7 +51,7 @@
       gap:16px;
     }
 
-    .brand{
+    .brand {
       display:flex;
       align-items:center;
       gap:11px;
@@ -60,27 +60,27 @@
       letter-spacing:-.4px;
     }
 
-    .brand-mark{
+    .brand-mark {
       width:39px;
       height:39px;
       border-radius:13px;
       background:linear-gradient(145deg,#4d83ed,#2a5ec9);
       display:grid;
       place-items:center;
-      color:white;
+      color:#fff;
       font-size:19px;
       box-shadow:0 8px 18px #356fe033;
     }
 
-    .nav-actions{
+    .nav-actions {
       display:flex;
       align-items:center;
       gap:12px;
     }
 
-    .lang-btn,.menu-link{
+    .lang-btn,.menu-link {
       border:1px solid var(--line);
-      background:white;
+      background:#fff;
       border-radius:999px;
       padding:9px 15px;
       font:inherit;
@@ -89,13 +89,13 @@
       cursor:pointer;
     }
 
-    .menu-link{
+    .menu-link {
       border-color:transparent;
       background:transparent;
       color:var(--muted);
     }
 
-    .hero{
+    .hero {
       padding:55px 0 72px;
       display:grid;
       grid-template-columns:1.08fr .92fr;
@@ -103,7 +103,7 @@
       align-items:center;
     }
 
-    .eyebrow{
+    .eyebrow {
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -116,35 +116,35 @@
       font-weight:800;
     }
 
-    .eyebrow-dot{
+    .eyebrow-dot {
       width:7px;
       height:7px;
       border-radius:50%;
       background:var(--teal);
     }
 
-    h1{
+    h1 {
       font-size:clamp(37px,5vw,58px);
       line-height:1.15;
       letter-spacing:-1.8px;
       margin:20px 0 18px;
     }
 
-    .hero p{
+    .hero p {
       font-size:17px;
       color:var(--muted);
       max-width:570px;
       margin:0 0 27px;
     }
 
-    .actions{
+    .actions {
       display:flex;
       flex-wrap:wrap;
       align-items:center;
       gap:12px;
     }
 
-    .btn{
+    .btn {
       display:inline-flex;
       justify-content:center;
       align-items:center;
@@ -156,24 +156,24 @@
       transition:.2s ease;
     }
 
-    .btn-primary{
+    .btn-primary {
       background:var(--blue);
-      color:white;
+      color:#fff;
       box-shadow:0 10px 22px #356fe033;
     }
 
-    .btn-primary:hover{
+    .btn-primary:hover {
       background:var(--blue-dark);
       transform:translateY(-2px);
     }
 
-    .btn-secondary{
-      background:white;
+    .btn-secondary {
+      background:#fff;
       border:1px solid var(--line);
       color:var(--ink);
     }
 
-    .free-note{
+    .free-note {
       display:flex;
       align-items:center;
       gap:8px;
@@ -182,16 +182,16 @@
       margin-top:18px;
     }
 
-    .free-note b{color:#248d7f}
+    .free-note b { color:#248d7f; }
 
-    .visual{
+    .visual {
       min-height:390px;
       position:relative;
       display:grid;
       place-items:center;
     }
 
-    .visual-card{
+    .visual-card {
       position:relative;
       width:min(100%,450px);
       min-height:335px;
@@ -203,7 +203,7 @@
       overflow:hidden;
     }
 
-    .visual-card:before,.visual-card:after{
+    .visual-card:before,.visual-card:after {
       content:"";
       position:absolute;
       border-radius:50%;
@@ -211,14 +211,14 @@
       opacity:.7;
     }
 
-    .visual-card:before{
+    .visual-card:before {
       width:210px;
       height:210px;
       top:-100px;
       left:-60px;
     }
 
-    .visual-card:after{
+    .visual-card:after {
       width:170px;
       height:170px;
       bottom:-100px;
@@ -226,29 +226,29 @@
       background:#d9f2ed;
     }
 
-    .screen{
+    .screen {
       position:relative;
       z-index:1;
-      background:white;
+      background:#fff;
       border:1px solid #e7ecf4;
       border-radius:19px;
       padding:17px;
       box-shadow:0 12px 30px #1b37600d;
     }
 
-    .screen-top{
+    .screen-top {
       display:flex;
       justify-content:space-between;
       align-items:center;
       margin-bottom:18px;
     }
 
-    .screen-title{
+    .screen-title {
       font-size:12px;
       font-weight:800;
     }
 
-    .screen-pill{
+    .screen-pill {
       font-size:10px;
       color:#248d7f;
       background:#eaf8f5;
@@ -257,13 +257,13 @@
       font-weight:800;
     }
 
-    .screen-grid{
+    .screen-grid {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:11px;
     }
 
-    .mini-card{
+    .mini-card {
       background:#f7f9fd;
       border:1px solid #edf0f6;
       border-radius:13px;
@@ -271,7 +271,7 @@
       min-height:105px;
     }
 
-    .mini-icon{
+    .mini-icon {
       width:30px;
       height:30px;
       display:grid;
@@ -283,35 +283,35 @@
       margin-bottom:8px;
     }
 
-    .mini-card:nth-child(2) .mini-icon{
+    .mini-card:nth-child(2) .mini-icon {
       background:#e9f7f4;
       color:#269786;
     }
 
-    .mini-card:nth-child(3) .mini-icon{
+    .mini-card:nth-child(3) .mini-icon {
       background:#f2edff;
       color:#8060ce;
     }
 
-    .mini-card:nth-child(4) .mini-icon{
+    .mini-card:nth-child(4) .mini-icon {
       background:#fff3e8;
       color:#cf8641;
     }
 
-    .mini-card strong{
+    .mini-card strong {
       display:block;
       font-size:11px;
     }
 
-    .mini-card small{
+    .mini-card small {
       font-size:9px;
       color:var(--muted);
     }
 
-    .float-tag{
+    .float-tag {
       position:absolute;
       z-index:2;
-      background:white;
+      background:#fff;
       border:1px solid var(--line);
       border-radius:14px;
       padding:11px 14px;
@@ -320,18 +320,18 @@
       font-weight:800;
     }
 
-    .tag-one{bottom:27px;left:-9px}
-    .tag-two{top:28px;right:-10px}
+    .tag-one { bottom:27px; left:-9px; }
+    .tag-two { top:28px; right:-10px; }
 
-    section{padding:67px 0}
+    section { padding:67px 0; }
 
-    .section-head{
+    .section-head {
       text-align:center;
       max-width:690px;
       margin:0 auto 34px;
     }
 
-    .kicker{
+    .kicker {
       font-size:12px;
       color:var(--blue);
       font-weight:900;
@@ -339,34 +339,34 @@
       text-transform:uppercase;
     }
 
-    h2{
+    h2 {
       font-size:clamp(27px,3.5vw,38px);
       line-height:1.25;
       letter-spacing:-.8px;
       margin:9px 0 11px;
     }
 
-    .section-head p{
+    .section-head p {
       margin:0;
       color:var(--muted);
       font-size:15px;
     }
 
-    .feature-grid{
+    .feature-grid {
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
-    .feature{
-      background:white;
+    .feature {
+      background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
       padding:23px;
       min-height:185px;
     }
 
-    .feature-icon{
+    .feature-icon {
       width:43px;
       height:43px;
       border-radius:14px;
@@ -377,26 +377,26 @@
       margin-bottom:15px;
     }
 
-    .feature:nth-child(2) .feature-icon{background:#e9f7f4}
-    .feature:nth-child(3) .feature-icon{background:#f3efff}
-    .feature:nth-child(4) .feature-icon{background:#fff3e8}
-    .feature:nth-child(5) .feature-icon{background:#edf6ff}
-    .feature:nth-child(6) .feature-icon{background:#fceff4}
+    .feature:nth-child(2) .feature-icon { background:#e9f7f4; }
+    .feature:nth-child(3) .feature-icon { background:#f3efff; }
+    .feature:nth-child(4) .feature-icon { background:#fff3e8; }
+    .feature:nth-child(5) .feature-icon { background:#edf6ff; }
+    .feature:nth-child(6) .feature-icon { background:#fceff4; }
 
-    .feature h3{
+    .feature h3 {
       font-size:16px;
       margin:0 0 7px;
     }
 
-    .feature p{
+    .feature p {
       font-size:13px;
       color:var(--muted);
       margin:0;
     }
 
-    .band{
+    .band {
       background:#122b4c;
-      color:white;
+      color:#fff;
       border-radius:28px;
       padding:38px;
       display:grid;
@@ -405,38 +405,38 @@
       align-items:center;
     }
 
-    .band h2{
+    .band h2 {
       margin:0 0 8px;
       font-size:29px;
     }
 
-    .band p{
+    .band p {
       margin:0;
       color:#c4d1e2;
       font-size:14px;
       max-width:650px;
     }
 
-    .band .btn{
-      background:white;
+    .band .btn {
+      background:#fff;
       color:#18365e;
       white-space:nowrap;
     }
 
-    .steps{
+    .steps {
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
-    .step{
-      background:white;
+    .step {
+      background:#fff;
       border:1px solid var(--line);
       border-radius:18px;
       padding:22px;
     }
 
-    .step-num{
+    .step-num {
       width:33px;
       height:33px;
       border-radius:11px;
@@ -449,32 +449,32 @@
       margin-bottom:14px;
     }
 
-    .step h3{
+    .step h3 {
       font-size:15px;
       margin:0 0 6px;
     }
 
-    .step p{
+    .step p {
       font-size:13px;
       color:var(--muted);
       margin:0;
     }
 
-    .faq{
+    .faq {
       max-width:800px;
       margin:auto;
       display:grid;
       gap:10px;
     }
 
-    details{
-      background:white;
+    details {
+      background:#fff;
       border:1px solid var(--line);
       border-radius:14px;
       padding:15px 18px;
     }
 
-    summary{
+    summary {
       font-weight:800;
       font-size:14px;
       cursor:pointer;
@@ -484,23 +484,24 @@
       gap:12px;
     }
 
-    summary::-webkit-details-marker{display:none}
-    summary:after{
+    summary::-webkit-details-marker { display:none; }
+
+    summary:after {
       content:"+";
       color:var(--blue);
       font-size:19px;
       line-height:1;
     }
 
-    details[open] summary:after{content:"−"}
+    details[open] summary:after { content:"−"; }
 
-    details p{
+    details p {
       margin:12px 0 0;
       color:var(--muted);
       font-size:13px;
     }
 
-    .final-cta{
+    .final-cta {
       text-align:center;
       background:#edf3ff;
       border:1px solid #e0eaff;
@@ -508,20 +509,20 @@
       padding:44px 22px;
     }
 
-    .final-cta p{
+    .final-cta p {
       color:var(--muted);
       max-width:590px;
       margin:0 auto 22px;
       font-size:14px;
     }
 
-    footer{
+    footer {
       padding:27px 0 35px;
       color:var(--muted);
       font-size:12px;
     }
 
-    .footer-inner{
+    .footer-inner {
       display:flex;
       justify-content:space-between;
       gap:15px;
@@ -530,65 +531,64 @@
       padding-top:22px;
     }
 
-    [data-lang="en"]{display:none}
+    [data-lang="en"] { display:none; }
 
-    body.english{direction:ltr}
-
-    body.english [data-lang="ar"]{display:none}
-    body.english [data-lang="en"]{display:initial}
+    body.english { direction:ltr; }
+    body.english [data-lang="ar"] { display:none; }
+    body.english [data-lang="en"] { display:initial; }
 
     body.english .hero,
-    body.english .band{direction:ltr}
+    body.english .band { direction:ltr; }
 
-    body.english .brand{letter-spacing:0}
+    body.english .brand { letter-spacing:0; }
 
     body.english .visual-card,
     body.english .feature,
-    body.english .step{text-align:left}
+    body.english .step { text-align:left; }
 
-    body.english .free-note{direction:ltr}
+    body.english .free-note { direction:ltr; }
 
-    @media(max-width:800px){
-      .hero{
+    @media(max-width:800px) {
+      .hero {
         grid-template-columns:1fr;
         gap:20px;
         padding:35px 0 55px;
       }
 
-      .visual{min-height:340px}
-      .feature-grid{grid-template-columns:repeat(2,1fr)}
-      .band{grid-template-columns:1fr;padding:29px}
-      .band .btn{justify-self:start}
+      .visual { min-height:340px; }
+      .feature-grid { grid-template-columns:repeat(2,1fr); }
+      .band { grid-template-columns:1fr; padding:29px; }
+      .band .btn { justify-self:start; }
     }
 
-    @media(max-width:540px){
-      .container{width:min(100% - 28px,1120px)}
-      .topbar{padding:14px 0}
-      .menu-link{display:none}
-      h1{font-size:39px}
-      .hero p{font-size:15px}
-      .visual{min-height:310px}
-      .visual-card{min-height:285px;padding:17px}
-      .float-tag{font-size:9px}
-      section{padding:48px 0}
-      .feature-grid,.steps{grid-template-columns:1fr}
-      .feature{min-height:auto}
-      .footer-inner{flex-direction:column;text-align:center}
-      .actions .btn{width:100%}
+    @media(max-width:540px) {
+      .container { width:min(100% - 28px,1120px); }
+      .topbar { padding:14px 0; }
+      .menu-link { display:none; }
+      h1 { font-size:39px; }
+      .hero p { font-size:15px; }
+      .visual { min-height:310px; }
+      .visual-card { min-height:285px; padding:17px; }
+      .float-tag { font-size:9px; }
+      section { padding:48px 0; }
+      .feature-grid,.steps { grid-template-columns:1fr; }
+      .feature { min-height:auto; }
+      .footer-inner { flex-direction:column; text-align:center; }
+      .actions .btn { width:100%; }
     }
 
     /* Application Form */
 
-    .apply-section{
+    .apply-section {
       background:linear-gradient(180deg,#f2f6ff 0%,#f7f9fc 100%);
     }
 
-    .apply-wrap{
+    .apply-wrap {
       max-width:850px;
       margin:auto;
     }
 
-    .apply-card{
+    .apply-card {
       background:#fff;
       border:1px solid #e1e8f4;
       border-radius:26px;
@@ -596,7 +596,7 @@
       overflow:hidden;
     }
 
-    .apply-head{
+    .apply-head {
       padding:30px 34px;
       background:linear-gradient(120deg,#142f55,#2456a2);
       color:#fff;
@@ -604,7 +604,7 @@
       overflow:hidden;
     }
 
-    .apply-head:after{
+    .apply-head:after {
       content:"";
       position:absolute;
       width:220px;
@@ -615,29 +615,29 @@
       top:-105px;
     }
 
-    .apply-kicker{
+    .apply-kicker {
       font-size:11px;
       letter-spacing:1.5px;
       font-weight:900;
       color:#b9d0ff;
     }
 
-    .apply-head h2{
+    .apply-head h2 {
       font-size:30px;
       margin:8px 0;
       color:#fff;
     }
 
-    .apply-head p{
+    .apply-head p {
       margin:0;
       color:#d9e5f7;
       font-size:14px;
       max-width:600px;
     }
 
-    .apply-body{padding:30px 34px}
+    .apply-body { padding:30px 34px; }
 
-    .form-progress{
+    .form-progress {
       height:6px;
       background:#edf1f7;
       border-radius:20px;
@@ -645,7 +645,7 @@
       overflow:hidden;
     }
 
-    .form-progress span{
+    .form-progress span {
       display:block;
       width:100%;
       height:100%;
@@ -653,32 +653,33 @@
       border-radius:20px;
     }
 
-    .form-grid{
+    .form-grid {
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:19px;
     }
 
-    .form-field{
+    .form-field {
       display:flex;
       flex-direction:column;
       gap:7px;
     }
 
-    .form-field.full{grid-column:1/-1}
+    .form-field.full { grid-column:1/-1; }
 
     .form-field label,
-    .field-label{
+    .field-label {
       font-size:13px;
       font-weight:800;
       color:#203858;
     }
 
-    .required{color:#d65a68}
+    .required { color:#d65a68; }
 
-    .form-field input,
+    /* تنسيق حقول النص فقط، وليس مربعات الاختيار أو الراديو */
+    .form-field input:not([type="checkbox"]):not([type="radio"]),
     .form-field textarea,
-    .form-field select{
+    .form-field select {
       width:100%;
       border:1px solid #dce4f0;
       border-radius:12px;
@@ -691,37 +692,38 @@
       transition:.2s;
     }
 
-    .form-field input:focus,
+    .form-field input:not([type="checkbox"]):not([type="radio"]):focus,
     .form-field textarea:focus,
-    .form-field select:focus{
+    .form-field select:focus {
       border-color:#5681dc;
       box-shadow:0 0 0 3px #5681dc18;
       background:#fff;
     }
 
-    .form-field textarea{
+    .form-field textarea {
       min-height:108px;
       resize:vertical;
     }
 
-    .choice-row{
+    .choice-row {
       display:flex;
       flex-wrap:wrap;
       gap:10px;
     }
 
-    .choice{position:relative}
+    .choice { position:relative; }
 
-    .choice input{
+    .choice input {
       position:absolute;
       opacity:0;
       pointer-events:none;
     }
 
-    .choice span{
+    /* تنسيق النص الخارجي فقط حتى لا تتكرر المربعات */
+    .choice > span {
       display:inline-flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       padding:10px 14px;
       border:1px solid #dce4f0;
       border-radius:12px;
@@ -733,47 +735,52 @@
       transition:.2s;
     }
 
-    .choice span:before{
+    .choice > span:before {
       content:"";
-      width:15px;
-      height:15px;
+      width:17px;
+      height:17px;
       border:1.5px solid #aab8cb;
       border-radius:5px;
       background:#fff;
       flex-shrink:0;
     }
 
-    .choice.radio span:before{border-radius:50%}
+    .choice.radio > span:before { border-radius:50%; }
 
-    .choice input:checked+span{
+    .choice input:checked + span {
       border-color:#4b79d3;
       background:#eef4ff;
       color:#2456a2;
     }
 
-    .choice input:checked+span:before{
+    .choice input:checked + span:before {
       background:#356fe0;
       border-color:#356fe0;
       box-shadow:inset 0 0 0 3px #fff;
     }
 
-    .choice-error{
+    .choice input:focus-visible + span {
+      outline:3px solid #5681dc55;
+      outline-offset:2px;
+    }
+
+    .choice-error {
       color:#d04452;
       font-size:12px;
       display:none;
       margin-top:5px;
     }
 
-    .field-invalid input,
-    .field-invalid textarea{
+    .field-invalid input:not([type="checkbox"]):not([type="radio"]),
+    .field-invalid textarea {
       border-color:#d65a68 !important;
     }
 
-    .field-invalid .choice span{
+    .field-invalid .choice > span {
       border-color:#d65a68;
     }
 
-    .submit-row{
+    .submit-row {
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -783,7 +790,7 @@
       border-top:1px solid #edf0f5;
     }
 
-    .submit-btn{
+    .submit-btn {
       border:0;
       cursor:pointer;
       background:linear-gradient(120deg,#356fe0,#2456bd);
@@ -796,21 +803,21 @@
       transition:.2s;
     }
 
-    .submit-btn:hover{transform:translateY(-1px)}
+    .submit-btn:hover { transform:translateY(-1px); }
 
-    .submit-btn:disabled{
+    .submit-btn:disabled {
       opacity:.65;
       cursor:not-allowed;
       transform:none;
     }
 
-    .submit-hint{
+    .submit-hint {
       font-size:11px;
       color:#718097;
       max-width:330px;
     }
 
-    .form-status{
+    .form-status {
       display:none;
       margin-top:18px;
       padding:15px 17px;
@@ -819,28 +826,28 @@
       line-height:1.8;
     }
 
-    .form-status.pending{
+    .form-status.pending {
       display:block;
       background:#eef4ff;
       color:#2456a2;
       border:1px solid #dce7ff;
     }
 
-    .form-status.success{
+    .form-status.success {
       display:block;
       background:#eef8f5;
       color:#217b6e;
       border:1px solid #d4eee6;
     }
 
-    .form-status.error{
+    .form-status.error {
       display:block;
       background:#fff1f1;
       color:#b42332;
       border:1px solid #f4d3d6;
     }
 
-    .hidden-frame{
+    .hidden-frame {
       position:absolute;
       width:1px;
       height:1px;
@@ -849,16 +856,18 @@
       top:-9999px;
     }
 
-    @media(max-width:600px){
-      .apply-head,.apply-body{padding:23px 19px}
-      .apply-head h2{font-size:25px}
-      .form-grid{grid-template-columns:1fr}
-      .form-field.full{grid-column:auto}
-      .submit-row{
+    @media(max-width:600px) {
+      .apply-head,.apply-body { padding:23px 19px; }
+      .apply-head h2 { font-size:25px; }
+      .form-grid { grid-template-columns:1fr; }
+      .form-field.full { grid-column:auto; }
+
+      .submit-row {
         align-items:stretch;
         flex-direction:column;
       }
-      .submit-btn{width:100%}
+
+      .submit-btn { width:100%; }
     }
   </style>
 </head>
@@ -1323,7 +1332,7 @@
                 <span></span>
               </div>
 
-              <!-- Hidden iframe: Google Forms response stays in the background -->
+              <!-- Google Forms response is submitted in the background -->
               <iframe
                 class="hidden-frame"
                 name="googleResponseFrame"
@@ -1418,11 +1427,11 @@
                     </div>
                   </div>
 
+                  <!-- Age groups: Arabic labels and exact Google Forms values -->
                   <div class="form-field full" id="field-groups">
 
                     <div class="field-label">
-                      <span data-lang="ar">ما الفئات العمرية التي تدرّس لها؟</span>
-                      <span data-lang="en">Which age groups do you teach?</span>
+                      الفئة العمرية التي تدرّس لها؟
                       <i class="required">*</i>
                     </div>
 
@@ -1432,33 +1441,24 @@
                         <input
                           type="checkbox"
                           name="entry.364235320"
-                          value="children">
-                        <span>
-                          <span data-lang="ar">الأطفال</span>
-                          <span data-lang="en">Children</span>
-                        </span>
+                          value="أطفال">
+                        <span>أطفال</span>
                       </label>
 
                       <label class="choice">
                         <input
                           type="checkbox"
                           name="entry.364235320"
-                          value="teenagers">
-                        <span>
-                          <span data-lang="ar">المراهقون</span>
-                          <span data-lang="en">Teenagers</span>
-                        </span>
+                          value="مراهقين">
+                        <span>مراهقين</span>
                       </label>
 
                       <label class="choice">
                         <input
                           type="checkbox"
                           name="entry.364235320"
-                          value="adults">
-                        <span>
-                          <span data-lang="ar">الكبار</span>
-                          <span data-lang="en">Adults</span>
-                        </span>
+                          value="بالغين">
+                        <span>بالغين</span>
                       </label>
 
                     </div>
@@ -1469,11 +1469,11 @@
 
                   </div>
 
+                  <!-- Online teaching experience: single choice -->
                   <div class="form-field full" id="field-online">
 
                     <div class="field-label">
-                      <span data-lang="ar">هل سبق لك التدريس أونلاين؟</span>
-                      <span data-lang="en">Have you taught online before?</span>
+                      هل درست أونلاين من قبل؟
                       <i class="required">*</i>
                     </div>
 
@@ -1483,22 +1483,16 @@
                         <input
                           type="radio"
                           name="entry.852306748"
-                          value="yes">
-                        <span>
-                          <span data-lang="ar">نعم</span>
-                          <span data-lang="en">Yes</span>
-                        </span>
+                          value="نعم">
+                        <span>نعم</span>
                       </label>
 
                       <label class="choice radio">
                         <input
                           type="radio"
                           name="entry.852306748"
-                          value="no">
-                        <span>
-                          <span data-lang="ar">لا</span>
-                          <span data-lang="en">No</span>
-                        </span>
+                          value="لا">
+                        <span>لا</span>
                       </label>
 
                     </div>
@@ -1797,8 +1791,8 @@
 
       if (firstError) {
         firstError.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
+          behavior:'smooth',
+          block:'center'
         });
       }
     }
@@ -1888,8 +1882,8 @@
       );
 
       /*
-        The form is submitted normally to Google Forms.
-        Its response is loaded inside the hidden iframe.
+        The form is submitted to Google Forms.
+        The response is loaded inside the hidden iframe.
         The applicant stays on this page.
       */
 
@@ -1943,8 +1937,8 @@
       */
 
       formStatus.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
+        behavior:'smooth',
+        block:'center'
       });
 
     });
